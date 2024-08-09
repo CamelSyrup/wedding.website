@@ -1,55 +1,91 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #ff7f7f;
-    color: white;
-    padding: 2em;
-}
-
-#countdown {
-    margin: 2em 0;
-}
-
-#timer {
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/premium-vector/horizontal-watercolor-floral-backdrop-decorated-with-dried-flowers-leaves-border_110338-3340.jpg?w=1060') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
     display: flex;
-    justify-content: center;
-    gap: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
-#timer div {
-    font-size: 2em;
-    background-color: #fff;
-    padding: 1em;
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1em;
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Countdown styles */
+#countdown {
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-footer nav ul {
-    list-style: none;
-    padding: 0;
+.countdown-item {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 60px;
 }
 
-footer nav ul li {
-    display: inline;
-    margin: 0 1em;
+.countdown-item span {
+    display: block;
+    font-size: 1.5em;
 }
 
-footer nav ul li a {
-    color: white;
-    text-decoration: none;
+.countdown-label {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+/* Flipboard effect */
+.countdown-item {
+    perspective: 100px;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2em;
+    line-height: 1;
+    background-color: #666;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.countdown-item span:hover {
+    background-color: #999;
+    transform: rotateX(10deg);
+}
+
+/* Center container styling */
+.container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
