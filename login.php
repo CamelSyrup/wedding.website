@@ -8,7 +8,7 @@ $hashed_password = '$2y$10$wHh8cEZ7Hg4D3BfNMEWwjuVD.q5E7OMe8/YhGObZClyDTj6Aub0P6
 if (isset($_POST['password'])) {
     if (password_verify($_POST['password'], $hashed_password)) {
         $_SESSION['authenticated'] = true;
-        header("Location: index.php");
+        header("Location: index.html");
         exit();
     } else {
         $error = "Invalid password.";
