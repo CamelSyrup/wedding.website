@@ -50,7 +50,8 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         const emailData = {
             name: name,
             email: email,
-            message: `RSVP: ${rsvp}\nPlus One: ${plusOne || 'N/A'}\nComments: ${comments || 'N/A'}`
+            mobile: mobile,
+            message: `RSVP: ${rsvp} || 'N/A'}`
         };
 
         const emailResponse = await fetch(formspreeUrl, {
