@@ -42,12 +42,13 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         });
 
         console.log('Airtable response status:', airtableResponse.status);
+        console.log('Airtable response status text:', airtableResponse.statusText);
 
         // Check if response is OK
         if (!airtableResponse.ok) {
-            const errorResponse = await airtableResponse.text(); // Get error message
+            const errorResponse = await airtableResponse.text(); // Get detailed error message
             console.error('Airtable response error:', errorResponse);
-            throw new Error(`Airtable Error: ${airtableResponse.statusText}`);
+            throw new Error(`Airtable Error ${airtableResponse.status}: ${airtableResponse.statusText}`);
         }
 
         const responseData = await airtableResponse.json();
@@ -78,9 +79,9 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
 
         // Check if response is OK
         if (!emailResponse.ok) {
-            const emailErrorResponse = await emailResponse.text(); // Get error message
+            const emailErrorResponse = await emailResponse.text(); // Get detailed error message
             console.error('Formspree response error:', emailErrorResponse);
-            throw new Error(`Formspree Error: ${emailResponse.statusText}`);
+            throw new Error(`Formspree Error ${emailResponse.status}: ${emailResponse.statusText}`);
         }
 
         // Success feedback
@@ -93,4 +94,5 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         responseMessage.style.color = 'red';
     }
 });
+
 
