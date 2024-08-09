@@ -33,9 +33,9 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <footer>
         <nav>
             <ul>
-                <li><a href="rsvp.html">RSVP</a></li>
-                <li><a href="location.html">Location</a></li>
-                <li><a href="gifts.html">Gifts</a></li>
+                <li><a href="rsvp.php">RSVP</a></li>
+                <li><a href="location.php">Location</a></li>
+                <li><a href="gifts.php">Gifts</a></li>
             </ul>
         </nav>
     </footer>
