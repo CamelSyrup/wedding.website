@@ -4,18 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Gifts</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styling for gifts.html */
+        .gifts-table {
+            width: 80%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gifts-table th, .gifts-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .gifts-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: #000;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .buy-button:hover {
+            background-color: #f0e000;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Wedding Gifts</h1>
-    </header>
-    
-    <section id="gifts">
-        <p>Thank you for your generosity! Here are some items we would love:</p>
-        <ul>
-            <li><strong>Item 1:</strong> Description <a href="https://www.amazon.com/your-link" target="_blank">Purchase</a></li>
-            <li><strong>Item 2:</strong> Description <a href="https://www.amazon.com/your-link" target="_blank">Purchase</a></li>
-            <li><strong>Item 3:</strong> Description <a href="https://www.amazon.com/your-link" target="_blank">Purchase</a></li>
-            <!-- Add more items as needed -->
-        </
+
+    <h1 style="text-align: center;">Wedding Gift Registry</h1>
+
+    <table class="gifts-table">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Price</th>
+                <th>Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Snorkeling Tour</td>
+                <td>$100</td>
+                <td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_EMAIL_ADDRESS&item_name=Snorkeling%20Tour&amount=100&currency_code=USD" class="buy-button" target="_blank">Buy</a></td>
+            </tr>
+            <tr>
+                <td>Spice Farm Visit</td>
+                <td>$80</td>
+                <td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_EMAIL_ADDRESS&item_name=Spice%20Farm%20Visit&amount=80&currency_code=USD" class="buy-button" target="_blank">Buy</a></td>
+            </tr>
+            <!-- Add more rows here -->
+        </tbody>
+    </table>
+
+</body>
+</html>
