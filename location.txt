@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Location</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wedding Location</h1>
+    </header>
+    
+    <section id="location">
+        <p>The wedding will be held at:</p>
+        <address>
+            123 Wedding Lane,<br>
+            Celebration City, 12345
+        </address>
+        <a href="https://www.google.com/maps?q=123+Wedding+Lane,+Celebration+City,12345" target="_blank">
+            View on Google Maps
+        </a>
+    </section>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rsvp.html">RSVP</a></li>
+                <li><a href="gifts.html">Gifts</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

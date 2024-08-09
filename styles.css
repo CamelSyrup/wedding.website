@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff7f7f;
+    color: white;
+    padding: 2em;
+}
+
+#countdown {
+    margin: 2em 0;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#timer div {
+    font-size: 2em;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
