@@ -9,7 +9,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
     // Airtable Configuration
     const airtableToken = '8f1785a651a764acb0e0a517b1a39b7d27529ec4ad480037304b43a6e00f1f97'; // Replace with your PAT
     const baseId = 'UWZ9bOtOKv2eVU'; // Replace with your Base ID
-    const tableName = 'RSVPs'; // Replace with your Table Name
+    const tableName = 'pIMgltrOANfIRB'; // Replace with your Table Name
 
     const airtableUrl = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
