@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 80%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Please enter the password to access the site:</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById('password').value;
+            var correctPassword = 'sydandjoe2209'; // Change this to your password
+
+            if (enteredPassword === correctPassword) {
+                window.location.href = 'home.html'; // Redirect to the main content page
+            } else {
+                document.getElementById('error-message').innerText = 'Incorrect password. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
