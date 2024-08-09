@@ -1,98 +1,25 @@
-document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mobile = document.getElementById('mobile').value.trim();
-    const rsvp = document.getElementById('rsvp').value;
-
-    // Airtable Configuration
-    const airtableToken = '8f1785a651a764acb0e0a517b1a39b7d27529ec4ad480037304b43a6e00f1f97'; // Replace with your PAT
-    const baseId = 'UWZ9bOtOKv2eVU'; // Replace with your Base ID
-    const tableName = 'pIMgltrOANfIRB'; // Replace with your Table Name
-
-    const airtableUrl = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
-
-    const airtableData = {
-        records: [
-            {
-                fields: {
-                    Name: name,
-                    Email: email,
-                    Mobile: mobile,
-                    RSVP: rsvp
-                }
-            }
-        ]
-    };
-
-    const responseMessage = document.getElementById('response-message');
-
-    try {
-        console.log('Submitting data to Airtable:', airtableData);
-
-        // Send data to Airtable
-        const airtableResponse = await fetch(airtableUrl, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${airtableToken}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(airtableData)
-        });
-
-        console.log('Airtable response status:', airtableResponse.status);
-        console.log('Airtable response status text:', airtableResponse.statusText);
-
-        // Check if response is OK
-        if (!airtableResponse.ok) {
-            const errorResponse = await airtableResponse.text(); // Get detailed error message
-            console.error('Airtable response error:', errorResponse);
-            throw new Error(`Airtable Error ${airtableResponse.status}: ${airtableResponse.statusText}`);
-        }
-
-        const responseData = await airtableResponse.json();
-        console.log('Airtable response data:', responseData);
-
-        // Send email notification via Formspree
-        const formspreeUrl = 'https://formspree.io/f/xkgwbboz'; // Replace with your Formspree form ID
-
-        const emailData = {
-            name: name,
-            email: email,
-            mobile: mobile,
-            rsvp: rsvp
-        };
-
-        console.log('Submitting data to Formspree:', emailData);
-
-        const emailResponse = await fetch(formspreeUrl, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(emailData)
-        });
-
-        console.log('Formspree response status:', emailResponse.status);
-
-        // Check if response is OK
-        if (!emailResponse.ok) {
-            const emailErrorResponse = await emailResponse.text(); // Get detailed error message
-            console.error('Formspree response error:', emailErrorResponse);
-            throw new Error(`Formspree Error ${emailResponse.status}: ${emailResponse.statusText}`);
-        }
-
-        // Success feedback
-        responseMessage.textContent = 'Thank you for your RSVP!';
-        responseMessage.style.color = 'green';
-        document.getElementById('rsvp-form').reset();
-    } catch (error) {
-        console.error('Submission Error:', error);
-        responseMessage.textContent = `There was an issue submitting your RSVP: ${error.message}`;
-        responseMessage.style.color = 'red';
-    }
-});
-
-
+function doPost(e) {
+  // Get the specific sheet by name
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("RSVP");
+  
+  // Check if the sheet exists
+  if (!sheet) {
+    return ContentService.createTextOutput("Sheet not found.");
+  }
+  
+  // Parse the form data
+  const params = e.parameter;
+  
+  // Append the data to the "RSVP" sheet
+  sheet.appendRow([params.name, params.email, params.mobile, params.rsvp, new Date()]);
+  
+  // Send an email notification (optional)
+  MailApp.sendEmail({
+    to: "joseph@minchellas.com",
+    subject: "New Wedding RSVP",
+    body: `New RSVP received:\n\nName: ${params.name}\nEmail: ${params.email}\nMobile: ${params.mobile}\nRSVP: ${params.rsvp}`
+  });
+  
+  // Return a success response
+  return ContentService.createTextOutput("RSVP received successfully!");
+}
