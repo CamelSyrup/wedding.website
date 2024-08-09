@@ -1,11 +1,3 @@
-    // Save data to Airtable
-    const airtableApiKey = 'pat8WDS8uO5hmisQd.8f1785a651a764acb0e0a517b1a39b7d27529ec4ad480037304b43a6e00f1f97';
-    const airtableBaseId = 'UWZ9bOtOKv2eVU';
-    const airtableTableName = 'Wedding RSVP';
-    const url = `https://api.airtable.com/v0/${airtableBaseId}/${airtableTableName}`;
-    // Above is old
-
-
 document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
