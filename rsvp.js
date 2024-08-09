@@ -34,18 +34,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         });
 
         // Send email using Formspree or EmailJS
-        await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                message: `RSVP: ${rsvp}\nPlus One: ${plusOne}\nComments: ${comments}`
-            })
-        });
+
 
         responseMessage.textContent = 'Thank you for your RSVP!';
         responseMessage.style.color = 'green';
