@@ -89,3 +89,24 @@ header p {
     justify-content: center;
     text-align: center;
 }
+
+/* Styles specific to the location page */
+.location-container {
+    text-align: center;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.location-address {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
