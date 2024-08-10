@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Default font for the body */
     margin: 0;
     padding: 0;
-    background-image: url('background.jpg'); /* Ensure this path matches your image location */
+    background-image: url('background.jpg'); /* Path to your floral background image */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,7 +11,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: #f5f5dc; /* Pale cream color */
+    background-color: rgba(255, 248, 220, 0.5); /* Very faint light cream color, half transparent */
     text-align: center;
     padding: 10px 0;
     position: fixed;
@@ -22,7 +22,7 @@ nav {
 
 nav a {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
     color: #000; /* Plain black text */
     font-weight: bold;
@@ -33,14 +33,17 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Page Title Bar */
+/* Heading Bar */
 .page-title {
-    background-color: #e0e0d1; /* Slightly darker cream color */
+    background-color: rgba(255, 239, 204, 0.5); /* Slightly lighter cream color, same transparency */
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
     margin-top: 60px; /* Adjust if the nav bar is fixed */
     color: #333; /* Dark text color */
     font-family: 'Calibri', sans-serif;
+    font-size: 36px; /* Bigger text for heading */
+    font-weight: bold;
+    width: 100%;
 }
 
 /* Container for Main Content */
@@ -52,91 +55,86 @@ nav a:hover {
     border-radius: 10px;
 }
 
-/* Common Headings and Paragraphs Styling */
-h1, h2 {
-    text-align: center;
-    color: #333;
+/* Tables */
+table {
+    width: 25%; /* Quarter of the page width */
+    margin: 20px auto; /* Centered on the page */
+    border-collapse: collapse;
+    background-color: rgba(255, 248, 220, 1); /* Opaque cream background */
 }
 
-p {
-    text-align: center;
-    color: #666;
-}
-
-/* Buttons Styling */
-.buy-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: yellow;
+table th {
+    background-color: #f5deb3; /* Darker cream for heading row */
     color: #000;
-    text-decoration: none;
-    border-radius: 20px;
-    border: 1px solid #ddd;
     font-weight: bold;
-}
-
-.buy-button:hover {
-    background-color: #f0e000;
-}
-
-/* FlipClock Styling */
-.flipclock {
-    text-align: center;
-    margin: 50px auto;
-}
-
-.flipclock .flip-clock-divider {
-    border: 2px solid #fff; /* Customize divider styles if needed */
-}
-
-
-/* Countdown styles */
-#countdown {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.countdown-item {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-align: center;
-    min-width: 60px;
-}
-
-.countdown-item span {
-    display: block;
-    font-size: 1.5em;
-}
-
-.countdown-label {
-    font-size: 0.8em;
-    margin-top: 5px;
-}
-
-/* Flipboard effect */
-.countdown-item {
-    perspective: 100px;
-}
-
-.countdown-item span {
-    display: block;
-    font-size: 2em;
-    line-height: 1;
-    background-color: #666;
-    color: #fff;
     padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.countdown-item span:hover {
-    background-color: #999;
-    transform: rotateX(10deg);
+table td {
+    background-color: #fff8dc; /* Lighter cream for body rows */
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Forms */
+form {
+    width: 40%; /* Adjust as needed */
+    margin: 20px auto; /* Centered on the page */
+    background-color: rgba(255, 248, 220, 0.5); /* 50% transparent cream background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Input fields and buttons */
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #f5deb3;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #e0c49c;
+}
+
+/* Embedded Maps */
+.map-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.map-container iframe {
+    border: 0;
+    width: 80%;
+    height: 450px;
+}
+
+/* Timer Styling */
+.timer {
+    text-align: center;
+    position: fixed;
+    bottom: 25%; /* A quarter of the screen up from the bottom */
+    width: 100%;
+    font-size: 24px; /* Medium size */
+    color: #333;
+    font-family: 'Calibri', sans-serif;
+}
+
+.flipclock {
+    display: inline-block;
+    margin: 0 auto;
 }
