@@ -1,15 +1,49 @@
-/* General styles (apply to all pages) */
+/* General Styles for All Pages */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Default font for the body */
     margin: 0;
     padding: 0;
-    background-image: url('Background.jpg');
+    background-image: url('background.jpg'); /* Ensure this path matches your image location */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* Ensure consistency for container elements */
+/* Navigation Bar */
+nav {
+    background-color: #f5f5dc; /* Pale cream color */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000; /* Plain black text */
+    font-weight: bold;
+    font-family: 'Calibri', sans-serif; /* Calibri font */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Page Title Bar */
+.page-title {
+    background-color: #e0e0d1; /* Slightly darker cream color */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 60px; /* Adjust if the nav bar is fixed */
+    color: #333; /* Dark text color */
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Container for Main Content */
 .container {
     width: 80%;
     margin: auto;
@@ -18,7 +52,7 @@ body {
     border-radius: 10px;
 }
 
-/* Common headings and paragraphs styling */
+/* Common Headings and Paragraphs Styling */
 h1, h2 {
     text-align: center;
     color: #333;
@@ -29,7 +63,7 @@ p {
     color: #666;
 }
 
-/* Buttons styling */
+/* Buttons Styling */
 .buy-button {
     display: inline-block;
     padding: 10px 20px;
@@ -44,6 +78,17 @@ p {
 .buy-button:hover {
     background-color: #f0e000;
 }
+
+/* FlipClock Styling */
+.flipclock {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.flipclock .flip-clock-divider {
+    border: 2px solid #fff; /* Customize divider styles if needed */
+}
+
 
 /* Countdown styles */
 #countdown {
@@ -94,34 +139,4 @@ p {
 .countdown-item span:hover {
     background-color: #999;
     transform: rotateX(10deg);
-}
-
-/* Center container styling */
-.container {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Page-specific styles for the location page */
-.location-page .location-container {
-    text-align: center;
-    margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for better readability */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.location-page .location-address {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.location-page .map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
