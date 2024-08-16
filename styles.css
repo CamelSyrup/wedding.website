@@ -136,19 +136,3 @@ input[type="submit"]:hover {
     width: 80%;
     height: 450px;
 }
-
-/* Timer Styling */
-.timer {
-    text-align: center;
-    position: fixed;
-    bottom: 25%; /* A quarter of the screen up from the bottom */
-    width: 100%;
-    font-size: 24px; /* Medium size */
-    color: #333;
-    font-family: 'Calibri', sans-serif;
-}
-
-.flipclock {
-    display: inline-block;
-    margin: 0 auto;
-}
