@@ -25,27 +25,22 @@
     </div>
 
     <!-- RSVP Form Section -->
-    <div class="container" id="rsvp">
+<div class="container" id="rsvp">
     <h2>RSVP</h2>
-        <form id="rsvpForm">
-            <div id="rsvpRows">
-                <div class="rsvp-row">
-                    <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
-                    <select name="rsvp" class="rsvp-select" required>
-                        <option value="" disabled selected>Yes/No</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <button type="button" id="addRowBtn">+</button>
-                <button type="button" id="removeRowBtn">-</button>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="rsvpMessage"></p>
-        <script src="rsvp.js"></script>
+    <form id="rsvpForm">
+        <div class="rsvp-row">
+            <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
+            <select name="rsvp" class="rsvp-select" required>
+                <option value="" disabled selected>Yes/No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <button type="button" id="addRowBtn">+</button>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="rsvpMessage"></p>        
+    <script src="rsvp.js"></script>
     </div>
 
     <!-- Countdown Section -->
