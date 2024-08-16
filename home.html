@@ -3,35 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding</title>
+    <title>Wedding Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-        <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav>
-        <a href="home.html">Home</a>
-        <a href="location.html">Location</a>
-        <a href="gifts.html">Gifts</a>
-        <a href="rsvp.html">RSVP</a>
+        <a href="#intro">Home</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#location">Location</a>
+        <a href="#gifts">Gifts</a>
     </nav>
 
-    <!-- Page Title -->
-    <div class="page-title">
-        <h1>We're Getting Married!</h1>
-        <p>Join us on <strong>August 24th, 2025</strong></p>
+    <!-- Heading Section -->
+    <div class="page-title" id="intro">
+        <h1>Welcome to Our Wedding!</h1>
+        <p>Join us on August 10, 2025</p>
     </div>
-    
-    <section id="countdown">
-        <h2>Countdown to Our Wedding</h2>
-        <div id="timer">
-            <div><span id="days"></span>Days</div>
-            <div><span id="hours"></span>Hours</div>
-            <div><span id="minutes"></span>Minutes</div>
-            <div><span id="seconds"></span>Seconds</div>
-        </div>
-    </section>
 
-    <script src="script.js"></script>
+    <!-- RSVP Form Section -->
+    <div class="container" id="rsvp">
+        <h2>RSVP</h2>
+        <form class="special-form" action="your-google-script-url" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="mobile" placeholder="Your Mobile Number" required>
+            <textarea name="rsvp" placeholder="Will you be attending?" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Countdown Section -->
+    <div class="timer" id="countdown">
+        <div class="flipclock"></div> <!-- The JS script will populate this div -->
+    </div>
+
+    <!-- Location Section -->
+    <div class="container" id="location">
+        <h2>Location</h2>
+        <p><strong>Oxleaze Barn</strong></p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.2654944742712!2d-1.6868396230890064!3d51.746468593210096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876cc4f3d94fc29%3A0x9fb1eaeed80aa8a5!2sOxleaze%20Barn!5e0!3m2!1sen!2suk!4v1723216578709!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <!-- Gifts Section -->
+    <div class="container" id="gifts">
+        <h2>Wedding Gifts</h2>
+        <table class="special-table">
+            <tr>
+                <th>Activity</th>
+                <th>Price</th>
+                <th>Payment</th>
+            </tr>
+            <tr>
+                <td>Snorkeling Adventure</td>
+                <td>$100</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Safari Tour</td>
+                <td>$150</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <!-- Add more activities as needed -->
+        </table>
+    </div>
+
+    <!-- Script for Countdown -->
+    <script src="path-to-flipclock-js"></script>
+    <script>
+        // Countdown to August 10, 2025
+        var countdownDate = new Date("Aug 10, 2025 00:00:00").getTime();
+        var clock = new FlipClock(document.querySelector('.flipclock'), countdownDate, {
+            countdown: true
+        });
+    </script>
+
 </body>
 </html>
