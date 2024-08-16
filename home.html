@@ -26,19 +26,35 @@
 
     <!-- RSVP Form Section -->
     <div class="container" id="rsvp">
-        <h2>RSVP</h2>
-        <form class="special-form" action="your-google-script-url" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="mobile" placeholder="Your Mobile Number" required>
-            <textarea name="rsvp" placeholder="Will you be attending?" required></textarea>
-            <input type="submit" value="Submit">
-        </form>
+    <h2>RSVP</h2>
+    <form id="rsvpForm">
+        <div class="rsvp-row">
+            <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
+            <select name="rsvp" class="rsvp-select" required>
+                <option value="" disabled selected>Yes/No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <button type="button" id="addRowBtn">+</button>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="rsvpMessage"></p>
+    <script src="rsvp.js"></script>
     </div>
 
     <!-- Countdown Section -->
     <div class="timer" id="countdown">
         <div class="flipclock"></div> <!-- The JS script will populate this div -->
+        <!-- Script for Countdown -->
+    <script src="flipclock.js"></script>
+    <script>
+        // Countdown to August 10, 2025
+        var countdownDate = new Date("Aug 10, 2025 00:00:00").getTime();
+        var clock = new FlipClock(document.querySelector('.flipclock'), countdownDate, {
+            countdown: true
+        });
+    </script>
     </div>
 
     <!-- Location Section -->
@@ -73,15 +89,6 @@
         </table>
     </div>
 
-    <!-- Script for Countdown -->
-    <script src="flipclock.js"></script>
-    <script>
-        // Countdown to August 10, 2025
-        var countdownDate = new Date("Aug 10, 2025 00:00:00").getTime();
-        var clock = new FlipClock(document.querySelector('.flipclock'), countdownDate, {
-            countdown: true
-        });
-    </script>
 
 </body>
 </html>
