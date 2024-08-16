@@ -1,48 +1,134 @@
-.flipclock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Adjust as needed */
+html { height: 100%; }
+body { 
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #EEE;
 }
 
-.flipclock .flip-digit {
-    font-size: 3em; /* Adjust size as needed */
-    font-family: 'Courier New', Courier, monospace; /* Gives it a retro look */
-    background-color: #333; /* Dark background for billboard effect */
-    color: #fff; /* White text color */
-    border-radius: 5px;
-    margin: 0 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds depth */
-    display: inline-block;
-    text-align: center;
-    position: relative;
+.flip-clock {
+  text-align: center;
+  perspective: 400px;
+  margin: 20px auto;
+  
+  *,
+  *:before,
+  *:after { box-sizing: border-box; }
 }
 
-.flipclock .flip-digit:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #fff; /* White line to simulate a split flap */
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.flip-clock__slot {
+  font-size: 2vw;
+}
+
+@halfHeight: 0.72em;
+@borderRadius: 0.15em;
+
+.card {
+  display: block;
+  position: relative; 
+  padding-bottom: @halfHeight;
+  font-size: 9vw;
+  line-height: 0.95;
+}
+
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+  display: block;
+  height: @halfHeight;
+  color: #ccc;
+  background: #222;
+  padding: 0.25em 0.25em;
+  border-radius: @borderRadius @borderRadius 0 0;
+  backface-visiblity: hidden;
+  transform-style: preserve-3d;
+  width: 1.8em;
+  transform: translateZ(0);
+}
+
+.card__bottom { 
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 1px #000;
+  background: #393939; 
+  border-radius: 0 0 @borderRadius @borderRadius; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.card__bottom::after {
+  display: block;
+  margin-top: -@halfHeight;
+}
+
+.card__back::before,
+.card__bottom::after {
+  content: attr(data-value);
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+
+.card__back::before {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.flip .card__back::before {
+  animation: flipTop 0.3s cubic-bezier(.37,.01,.94,.35);
+  animation-fill-mode: both;
+  transform-origin: center bottom;
+}
+
+.flip .card__back .card__bottom {
+  transform-origin: center top;
+  animation-fill-mode: both;
+  animation: flipBottom 0.6s cubic-bezier(.15,.45,.28,1);// 0.3s; 
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
     z-index: 2;
+  }
+  0%, 99% {
+    opacity: 0.99;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
 }
 
-.flipclock .flip-digit .digit-top,
-.flipclock .flip-digit .digit-bottom {
-    display: block;
-    overflow: hidden;
-    position: relative;
-    height: 50%;
-    line-height: 1;
+@keyframes flipBottom {
+  0%, 50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
 }
 
-.flipclock .flip-digit .digit-top {
-    border-bottom: 2px solid #000; /* Simulates the flip split */
-}
-
-.flipclock .flip-digit .digit-bottom {
-    border-top: 2px solid #000; /* Simulates the flip split */
-}
