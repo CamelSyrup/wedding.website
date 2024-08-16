@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const rsvpForm = document.getElementById('rsvpForm');
     const addRowBtn = document.getElementById('addRowBtn');
+    const removeRowBtn = document.getElementById('removeRowBtn');
     const rsvpMessage = document.getElementById('rsvpMessage');
 
     // Function to add a new row
@@ -28,18 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>`;
-        rsvpForm.insertBefore(newRow, addRowBtn);
+        rsvpForm.insertBefore(newRow, addRowBtn.parentElement);
     });
 
     // Function to remove the last added row
-    const removeRowBtn = document.getElementById('removeRowBtn');
     removeRowBtn.addEventListener('click', function () {
         const rows = document.querySelectorAll('.rsvp-row');
         if (rows.length > 1) { // Ensure we don't remove the original row
             rows[rows.length - 1].remove();
         }
     });
-    
+
     // Function to validate and submit the form
     rsvpForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let allValid = true;
         let invalidName = '';
 
+        // Validate each name input
         nameInputs.forEach(input => {
             if (!allowedNames.includes(input.value.trim())) {
                 allValid = false;
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             rsvpMessage.textContent = "RSVP successfully submitted!";
             rsvpMessage.style.color = "green";
 
-            // Collect form data
+            // Collect all form data for multiple rows
             const formData = [];
             document.querySelectorAll('.rsvp-row').forEach(row => {
                 const name = row.querySelector('.rsvp-name').value.trim();
@@ -67,16 +68,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 formData.push({ name, rsvp });
             });
 
-            // Convert FormData to URL-encoded string
-            const params = new URLSearchParams();
-            formData.forEach((value, key) => {
-                params.append(key, value);
-            });
-
             // Send data to Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
                 method: 'POST',
-                body: params
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
             .then(response => response.json())
             .then(data => {
