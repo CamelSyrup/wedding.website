@@ -78,37 +78,51 @@ table td {
     border: 1px solid #ddd;
 }
 
-/* Forms */
-form {
-    width: 40%; /* Adjust as needed */
-    margin: 20px auto; /* Centered on the page */
-    background-color: rgba(255, 248, 220, 0.5); /* 50% transparent cream background */
-    padding: 20px;
-    border-radius: 10px;
+.rsvp-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-/* Input fields and buttons */
-input[type="text"],
-input[type="email"],
-input[type="submit"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+.rsvp-name {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.rsvp-select {
+    padding: 8px;
+}
+
+#addRowBtn {
+    background-color: #ffc107; /* Yellow background */
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
+}
+
+#addRowBtn:hover {
+    background-color: #ffca28; /* Slightly darker yellow on hover */
 }
 
 input[type="submit"] {
-    background-color: #f5deb3;
-    color: #000;
-    font-weight: bold;
+    background-color: #4caf50; /* Green background */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 input[type="submit"]:hover {
-    background-color: #e0c49c;
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#rsvpMessage {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Embedded Maps */
