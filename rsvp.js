@@ -31,6 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
         rsvpForm.insertBefore(newRow, addRowBtn);
     });
 
+    // Function to remove the last added row
+    const removeRowBtn = document.getElementById('removeRowBtn');
+    removeRowBtn.addEventListener('click', function () {
+        const rows = document.querySelectorAll('.rsvp-row');
+        if (rows.length > 1) { // Ensure we don't remove the original row
+            rows[rows.length - 1].remove();
+        }
+    });
+    
     // Function to validate and submit the form
     rsvpForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
@@ -51,7 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
             rsvpMessage.style.color = "green";
 
             // Collect form data
-            const formData = new FormData(rsvpForm);
+            const formData = [];
+            document.querySelectorAll('.rsvp-row').forEach(row => {
+                const name = row.querySelector('.rsvp-name').value.trim();
+                const rsvp = row.querySelector('.rsvp-select').value;
+                formData.push({ name, rsvp });
+            });
 
             // Convert FormData to URL-encoded string
             const params = new URLSearchParams();
