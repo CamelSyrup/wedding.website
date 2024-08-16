@@ -1,0 +1,48 @@
+.flipclock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as needed */
+}
+
+.flipclock .flip-digit {
+    font-size: 3em; /* Adjust size as needed */
+    font-family: 'Courier New', Courier, monospace; /* Gives it a retro look */
+    background-color: #333; /* Dark background for billboard effect */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds depth */
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.flipclock .flip-digit:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #fff; /* White line to simulate a split flap */
+    z-index: 2;
+}
+
+.flipclock .flip-digit .digit-top,
+.flipclock .flip-digit .digit-bottom {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 50%;
+    line-height: 1;
+}
+
+.flipclock .flip-digit .digit-top {
+    border-bottom: 2px solid #000; /* Simulates the flip split */
+}
+
+.flipclock .flip-digit .digit-bottom {
+    border-top: 2px solid #000; /* Simulates the flip split */
+}
