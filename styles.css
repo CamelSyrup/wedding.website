@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Default font for the body */
     margin: 0;
     padding: 0;
-    background-image: ('background.jpg'); /* Path to your floral background image */
+    background-image: 'background.jpg'; /* Path to your floral background image */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
