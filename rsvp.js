@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
+                redirect: "follow",
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {
