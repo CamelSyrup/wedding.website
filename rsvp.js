@@ -1,4 +1,3 @@
-// rsvp.js
 document.addEventListener('DOMContentLoaded', function () {
     let allowedNames = [];
 
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const rsvpRows = document.getElementById('rsvpRows');
     const rsvpMessage = document.getElementById('rsvpMessage');
 
-    // Function to add a new row
     addRowBtn.addEventListener('click', function () {
         const newRow = document.createElement('div');
         newRow.className = 'rsvp-row';
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         rsvpRows.appendChild(newRow);
     });
 
-    // Function to remove the last added row, but not the initial row
     removeRowBtn.addEventListener('click', function () {
         const rows = document.querySelectorAll('.rsvp-row');
         if (rows.length > 1) {
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Function to handle form submission
     rsvpForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -60,21 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
             rsvpMessage.textContent = "RSVP successfully submitted!";
             rsvpMessage.style.color = "green";
 
-            const formData = [];
+            const params = [];
             document.querySelectorAll('.rsvp-row').forEach(row => {
                 const name = row.querySelector('.rsvp-name').value.trim();
                 const rsvp = row.querySelector('.rsvp-select').value;
-                formData.push({ name, rsvp });
+                params.push(`name=${encodeURIComponent(name)}&rsvp=${encodeURIComponent(rsvp)}`);
             });
 
-            fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
-                redirect: "follow",
-                method: 'POST',
-                body: JSON.stringify(formData),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                }
+            const queryString = params.join('&');
+
+            fetch(`https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec?${queryString}`, {
+                method: 'GET',
             })
             .then(response => response.text())
             .then(data => {
