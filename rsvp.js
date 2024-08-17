@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rsvpRows = document.getElementById('rsvpRows');
     const rsvpMessage = document.getElementById('rsvpMessage');
 
+    // Function to add a new row
     addRowBtn.addEventListener('click', function () {
         const newRow = document.createElement('div');
         newRow.className = 'rsvp-row';
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         rsvpRows.appendChild(newRow);
     });
 
+    // Function to remove the last added row, but not the initial row
     removeRowBtn.addEventListener('click', function () {
         const rows = document.querySelectorAll('.rsvp-row');
         if (rows.length > 1) {
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Function to handle form submission
     rsvpForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -68,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 }
             })
             .then(response => response.text())
