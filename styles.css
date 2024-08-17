@@ -80,40 +80,47 @@ table td {
 
 /* Forms and RSVP */
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#rsvpForm {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .rsvp-row {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.rsvp-name,
-.rsvp-select {
-    margin-right: 10px;
+.rsvp-row input,
+.rsvp-row select {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
+    display: inline-block;
     margin: 5px;
-    padding: 10px;
+    padding: 10px 15px;
+    background-color: #f0c040;
     border: none;
     border-radius: 5px;
-    background-color: #f9c74f; /* Yellow */
-    color: #fff;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #f3b431; /* Darker yellow */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
 }
 
 #rsvpMessage {
     text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 /* Embedded Maps */
