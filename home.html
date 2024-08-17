@@ -29,7 +29,7 @@
     <h2>RSVP</h2>
     <form id="rsvpForm">
         <div class="rsvp-row">
-            <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
+            <input type="text" name="name" placeholder="First Last (Case Sensitive)" class="rsvp-name" required>
             <select name="rsvp" class="rsvp-select" required>
                 <option value="" disabled selected>Yes/No</option>
                 <option value="Yes">Yes</option>
@@ -37,10 +37,11 @@
             </select>
         </div>
         <button type="button" id="addRowBtn">+</button>
-        <input type="submit" value="Submit">
+        <button type="button" id="removeRowBtn">-</button>
+        <button type="submit">Submit</button>
+        <p id="rsvpMessage"></p>        
     </form>
-    <p id="rsvpMessage"></p>        
-    <script src="rsvp.js"></script>
+        <script src="rsvp.js"></script>
     </div>
 
     <!-- Countdown Section -->
