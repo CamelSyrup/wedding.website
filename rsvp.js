@@ -1,7 +1,7 @@
+// rsvp.js
 document.addEventListener('DOMContentLoaded', function () {
     let allowedNames = [];
 
-    // Function to load allowed names from a text file
     function loadAllowedNames() {
         fetch('allowed_names.txt')
             .then(response => response.text())
@@ -11,13 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error loading allowed names:', error));
     }
 
-    loadAllowedNames(); // Load the names when the page loads
+    loadAllowedNames();
 
     const rsvpForm = document.getElementById('rsvpForm');
     const addRowBtn = document.getElementById('addRowBtn');
+    const removeRowBtn = document.getElementById('removeRowBtn');
+    const rsvpRows = document.getElementById('rsvpRows');
     const rsvpMessage = document.getElementById('rsvpMessage');
 
-    // Function to add a new row
     addRowBtn.addEventListener('click', function () {
         const newRow = document.createElement('div');
         newRow.className = 'rsvp-row';
@@ -28,12 +29,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>`;
-        rsvpForm.insertBefore(newRow, addRowBtn);
+        rsvpRows.appendChild(newRow);
     });
 
-    // Function to validate and submit the form
+    removeRowBtn.addEventListener('click', function () {
+        const rows = document.querySelectorAll('.rsvp-row');
+        if (rows.length > 1) {
+            rows[rows.length - 1].remove();
+        }
+    });
+
     rsvpForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
 
         const nameInputs = document.querySelectorAll('.rsvp-name');
         let allValid = true;
@@ -50,21 +57,21 @@ document.addEventListener('DOMContentLoaded', function () {
             rsvpMessage.textContent = "RSVP successfully submitted!";
             rsvpMessage.style.color = "green";
 
-            // Collect form data
-            const formData = new FormData(rsvpForm);
-
-            // Convert FormData to URL-encoded string
-            const params = new URLSearchParams();
-            formData.forEach((value, key) => {
-                params.append(key, value);
+            const formData = [];
+            document.querySelectorAll('.rsvp-row').forEach(row => {
+                const name = row.querySelector('.rsvp-name').value.trim();
+                const rsvp = row.querySelector('.rsvp-select').value;
+                formData.push({ name, rsvp });
             });
 
-            // Send data to Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
                 method: 'POST',
-                body: params
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
                 console.log('Success:', data);
             })
