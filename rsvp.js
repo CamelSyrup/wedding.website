@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const newRow = document.createElement('div');
         newRow.className = 'rsvp-row';
         newRow.innerHTML = `
-            <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
-            <select name="rsvp" class="rsvp-select" required>
+            <input type="text" name="name[]" placeholder="Your Name" class="rsvp-name" required>
+            <select name="rsvp[]" class="rsvp-select" required>
                 <option value="" disabled selected>Yes/No</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -39,46 +39,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     rsvpForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const nameInputs = document.querySelectorAll('.rsvp-name');
-    let allValid = true;
-    let invalidName = '';
+        const nameInputs = document.querySelectorAll('.rsvp-name');
+        let allValid = true;
+        let invalidName = '';
 
-    const formData = new FormData();
-
-    nameInputs.forEach((input, index) => {
-        const nameValue = input.value.trim();
-        const rsvpValue = document.querySelectorAll('.rsvp-select')[index].value;
-
-        if (!allowedNames.includes(nameValue)) {
-            allValid = false;
-            invalidName = nameValue;
-        }
-
-        formData.append(`name[${index}]`, nameValue);
-        formData.append(`rsvp[${index}]`, rsvpValue);
-    });
-
-    if (allValid) {
-        rsvpMessage.textContent = "RSVP successfully submitted!";
-        rsvpMessage.style.color = "green";
-
-        fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
+        nameInputs.forEach(input => {
+            if (!allowedNames.includes(input.value.trim())) {
+                allValid = false;
+                invalidName = input.value.trim();
+            }
         });
-    } else {
-        rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
-        rsvpMessage.style.color = "red";
 
+        if (allValid) {
+            rsvpMessage.textContent = "RSVP successfully submitted!";
+            rsvpMessage.style.color = "green";
+
+            const formData = new FormData(rsvpForm);
+
+            fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        } else {
+            rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
+            rsvpMessage.style.color = "red";
         }
     });
 });
