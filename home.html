@@ -48,16 +48,23 @@
     </div>
 
     <!-- Countdown Section -->
-<div class="example">
-  <h1>Countdown!</h1>
-  <p>⏰ 10th August, 2025 ⏰</p>
-  <div id="flipdown" class="flipdown"></div>
-  <div class="buttons">
-    <p>Version: <span id="ver"></span> (&lt;11KB minified)</p>
-    <a href="https://github.com/PButcher/flipdown#flipdown" target="_blank" class="button"><i class="fab fa-github"></i> <span>Get started</span></a>
-  </div>
-</div>
-
+    <div class="clock-builder-output"></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="flipclock.js"></script>
+<style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CCCCCC; background-color: #333333; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #323434; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #323434; }</style>
+<script type="text/javascript">
+$(function(){
+	FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+	var opts = {
+		clockFace: 'DailyCounter',
+		countdown: true,
+		language: 'Custom'
+	};  
+	var countdown = 1754833140 - ((new Date().getTime())/1000); // from: 08/10/2025 01:39 pm +0000
+	countdown = Math.max(1, countdown);
+	$('.clock-builder-output').FlipClock(countdown, opts);
+});
+</script>
 
 
     <!-- Location Section -->
