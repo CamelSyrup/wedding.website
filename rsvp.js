@@ -45,27 +45,28 @@ document.addEventListener('DOMContentLoaded', function () {
     let allValid = true;
     let invalidName = '';
 
-    const names = [];
-    const rsvps = [];
+    const formData = new FormData();
 
     nameInputs.forEach((input, index) => {
         const nameValue = input.value.trim();
+        const rsvpValue = document.querySelectorAll('.rsvp-select')[index].value;
+
         if (!allowedNames.includes(nameValue)) {
             allValid = false;
             invalidName = nameValue;
         }
-        names.push(nameValue);
-        rsvps.push(document.querySelectorAll('.rsvp-select')[index].value);
+
+        formData.append(`name[${index}]`, nameValue);
+        formData.append(`rsvp[${index}]`, rsvpValue);
     });
 
     if (allValid) {
         rsvpMessage.textContent = "RSVP successfully submitted!";
         rsvpMessage.style.color = "green";
 
-        const queryString = `name=${encodeURIComponent(names.join(','))}&rsvp=${encodeURIComponent(rsvps.join(','))}`;
-
-        fetch(`https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec?${queryString}`, {
-            method: 'GET',
+        fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
+            method: 'POST',
+            body: formData
         })
         .then(response => response.text())
         .then(data => {
