@@ -78,5 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
         rsvpMessage.style.color = "red";
-    }
+
+        }
+    });
 });
