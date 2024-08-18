@@ -56,9 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
       rsvpMessage.textContent = "RSVP successfully submitted!";
       rsvpMessage.style.color = "green";
 
-      const formData = new FormData(rsvpForm);
       const params = [];
-      formData.forEach((value, key) => params.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`));
+      document.querySelectorAll('.rsvp-row').forEach((row, index) => {
+        const name = row.querySelector('.rsvp-name').value.trim();
+        const rsvp = row.querySelector('.rsvp-select').value;
+        params.push(`name${index + 1}=${encodeURIComponent(name)}`);
+        params.push(`rsvp${index + 1}=${encodeURIComponent(rsvp)}`);
+      });
+
       const queryString = params.join('&');
 
       fetch('https://script.google.com/macros/s/AKfycbyEPlzM8i7MXGTb89pIwNt1Cw7LCJ0ZreLwjZPlKp8aj3miF9zOndiQHFRi_fwNQ6kYbg/exec', {
@@ -66,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: queryString
+        body: queryString,
       })
       .then(response => response.text())
       .then(data => {
@@ -75,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch((error) => {
         console.error('Error:', error);
       });
+
     } else {
       rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
       rsvpMessage.style.color = "red";
