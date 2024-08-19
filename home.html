@@ -36,7 +36,7 @@
         <div id="rsvpRows">
             <!-- Initial Row -->
             <div class="rsvp-row">
-                <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
+                <input type="text" name="name" placeholder="Your Name (First Last)" class="rsvp-name" required>
                 <select name="rsvp" class="rsvp-select" required>
                     <option value="" disabled selected>Yes/No</option>
                     <option value="Yes">Yes</option>
@@ -44,8 +44,8 @@
                 </select>
             </div>
         </div>
-        <button type="button" id="addRowBtn">+</button>
-        <button type="button" id="removeRowBtn">-</button>
+        <button type="button" id="addRowBtn">Add</button>
+        <button type="button" id="removeRowBtn">Remove</button>
         <button type="submit">Submit</button>
         <p id="rsvpMessage"></p>
     </form>
@@ -54,7 +54,7 @@
 
     <!-- Countdown Section -->
 	<h2>Countdown!</h2>
-    <div class="clock-builder-output"></div>
+    <div class="clock-builder-output" id="countdown"></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="flipclock.js"></script>
 <style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CCCCCC; background-color: #333333; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #323434; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #323434; }</style>
@@ -76,7 +76,7 @@ $(function(){
     <!-- Location Section -->
     <div class="container" id="location">
         <h2>Location</h2>
-        <p><strong>Oxleaze Barn</strong></p>
+        <p><strong>Oxleaze Barn, Filkins, Lechlade, GL7 3RB</strong></p>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.2654944742712!2d-1.6868396230890064!3d51.746468593210096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876cc4f3d94fc29%3A0x9fb1eaeed80aa8a5!2sOxleaze%20Barn!5e0!3m2!1sen!2suk!4v1723216578709!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
