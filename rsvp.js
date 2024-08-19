@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const newRow = document.createElement('div');
     newRow.className = 'rsvp-row';
     newRow.innerHTML = `
-        <input type="text" name="name" placeholder="Your Name" class="rsvp-name" required>
+        <input type="text" name="name" placeholder="Full Name (First Last)" class="rsvp-name" required>
         <select name="rsvp" class="rsvp-select" required>
             <option value="" disabled selected>Yes/No</option>
             <option value="Yes">Yes</option>
