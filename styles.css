@@ -2,13 +2,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Perpetua', serif; /* Change to Perpetua font */
-  text-align: center; /* Centralizes text by default */
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centralizes all content horizontally */
   width: 100%;
   box-sizing: border-box;
+  background-color: #f5f5dc; /* Light cream background for the entire site */
 }
 
 /* Ensure all containers are centralized */
@@ -23,7 +24,8 @@ body {
 /* Centralize text for all headers */
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-  font-family: 'Perpetua', serif; /* Apply Perpetua font to headers */
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  color: #6b4226; /* Dark brown for contrast with cream background */
 }
 
 /* Centralize forms, tables, and other block elements */
@@ -31,52 +33,62 @@ form, table, .content {
   margin: 0 auto; /* Centralize block elements */
   width: 100%;
   max-width: 600px; /* Ensure block elements fit within mobile screens */
+  background-color: #fff; /* White background for form areas */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Set a default style for buttons */
+/* Style form fields */
+input[type="text"], select {
+  width: calc(100% - 30px); /* Adjust width to fit within form */
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  border: 1px solid #dcdcdc; /* Light grey border */
+  border-radius: 5px;
+  background-color: #faf0e6; /* Very light cream background */
+}
+
+/* Style for +, -, and submit buttons */
 button {
-  font-family: 'Perpetua', serif; /* Use the Perpetua font */
-  text-align: center;
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  background-color: #f5deb3; /* Wheat color for buttons */
+  color: #6b4226; /* Dark brown text color */
+  border: 1px solid #dcdcdc;
   padding: 10px 20px;
-  margin: 10px auto; /* Centralize the button */
-  display: block;
+  margin: 10px 5px; /* Small margin between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block; /* Ensure buttons are next to each other */
 }
 
-/* Ensure images are centered */
-img {
-  display: block;
-  margin: 0 auto; /* Center images */
-  max-width: 100%; /* Ensure images fit within mobile screens */
-  height: auto; /* Maintain aspect ratio */
+button:hover {
+  background-color: #d2b48c; /* Tan color on hover */
 }
 
-/* Default centering for divs */
-div {
+/* Ensure buttons are inline in the form */
+.form-buttons {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Make sure footer and header are also centralized */
-header, footer {
-  text-align: center;
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
+.form-buttons button {
+  margin: 5px; /* Small margin between buttons */
 }
 
-/* Centralize navigation links */
-.navbar {
-  text-align: center;
-  background-color: rgba(255, 255, 224, 0.8); /* Light cream color with transparency */
-  width: 100%;
-  box-sizing: border-box;
-}
+/* Responsive form fields and buttons */
+@media (max-width: 768px) {
+  input[type="text"], select {
+    width: calc(100% - 20px); /* Adjust for mobile screens */
+  }
 
-.navbar a {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-family: 'Perpetua', serif; /* Apply Perpetua font to nav links */
+  .form-buttons {
+    flex-direction: column; /* Stack buttons on top of each other for narrow screens */
+  }
 }
 
 /* Tables should be responsive */
@@ -85,24 +97,52 @@ table {
   max-width: 600px;
   margin: 20px auto;
   border-collapse: collapse;
-  background-color: rgba(255, 255, 224, 1); /* Cream color for tables */
+  background-color: rgba(245, 222, 179, 1); /* Wheat color for tables */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: center;
-  font-family: 'Perpetua', serif; /* Apply Perpetua font to table content */
+  font-family: 'Perpetua', serif; /* Perpetua font */
 }
 
-/* Responsive form fields */
-input[type="text"], select {
+/* Navbar styles */
+.navbar {
+  text-align: center;
+  background-color: rgba(255, 255, 224, 0.8); /* Light cream color with transparency */
   width: 100%;
-  max-width: 500px;
   padding: 10px;
-  margin-bottom: 10px;
   box-sizing: border-box;
-  font-family: 'Perpetua', serif; /* Apply Perpetua font to form fields */
+  border-bottom: 2px solid #dcdcdc;
+}
+
+.navbar a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  color: #6b4226; /* Dark brown text */
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Perpetua', serif; /* Perpetua font */
+  background-color: #f5deb3; /* Wheat background */
+  color: #6b4226; /* Dark brown text */
+  border-top: 2px solid #dcdcdc;
+  box-sizing: border-box;
 }
 
 /* Adjust for mobile screens */
