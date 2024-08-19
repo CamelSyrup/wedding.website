@@ -1,136 +1,124 @@
-/* General Styles for All Pages */
+/* Apply these styles to the entire body of the website */
 body {
-    font-family: Arial, sans-serif; /* Default font for the body */
-    margin: 0;
-    padding: 0;
-    background-image: 'background.jpg'; /* Path to your floral background image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Perpetua', serif; /* Change to Perpetua font */
+  text-align: center; /* Centralizes text by default */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centralizes all content horizontally */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Navigation Bar */
-nav {
-    background-color: rgba(255, 248, 220, 0.5); /* Very faint light cream color, half transparent */
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-nav a {
-    display: inline-block;
-    margin: 0 20px;
-    text-decoration: none;
-    color: #000; /* Plain black text */
-    font-weight: bold;
-    font-family: 'Calibri', sans-serif; /* Calibri font */
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Heading Bar */
-.page-title {
-    background-color: rgba(255, 239, 204, 0.5); /* Slightly lighter cream color, same transparency */
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 60px; /* Adjust if the nav bar is fixed */
-    color: #333; /* Dark text color */
-    font-family: 'Calibri', sans-serif;
-    font-size: 36px; /* Bigger text for heading */
-    font-weight: bold;
-    width: 100%;
-}
-
-/* Container for Main Content */
+/* Ensure all containers are centralized */
 .container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Lightly transparent for readability */
-    border-radius: 10px;
+  width: 100%;
+  max-width: 1200px; /* Maximum width for large screens */
+  margin: 0 auto; /* Centralizes the container */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Tables */
-table {
-    width: 25%; /* Quarter of the page width */
-    margin: 20px auto; /* Centered on the page */
-    border-collapse: collapse;
-    background-color: rgba(255, 248, 220, 1); /* Opaque cream background */
+/* Centralize text for all headers */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: 'Perpetua', serif; /* Apply Perpetua font to headers */
 }
 
-table th {
-    background-color: #f5deb3; /* Darker cream for heading row */
-    color: #000;
-    font-weight: bold;
-    padding: 10px;
+/* Centralize forms, tables, and other block elements */
+form, table, .content {
+  margin: 0 auto; /* Centralize block elements */
+  width: 100%;
+  max-width: 600px; /* Ensure block elements fit within mobile screens */
 }
 
-table td {
-    background-color: #fff8dc; /* Lighter cream for body rows */
-    color: #000;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-/* Forms and RSVP */
-
-#rsvpForm {
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.rsvp-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.rsvp-row input,
-.rsvp-row select {
-    width: 45%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
+/* Set a default style for buttons */
 button {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 15px;
-    background-color: #f0c040;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  font-family: 'Perpetua', serif; /* Use the Perpetua font */
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px auto; /* Centralize the button */
+  display: block;
 }
 
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
+/* Ensure images are centered */
+img {
+  display: block;
+  margin: 0 auto; /* Center images */
+  max-width: 100%; /* Ensure images fit within mobile screens */
+  height: auto; /* Maintain aspect ratio */
 }
 
-#rsvpMessage {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
+/* Default centering for divs */
+div {
+  text-align: center;
 }
 
-/* Embedded Maps */
-.map-container {
-    text-align: center;
-    margin: 20px auto;
+/* Make sure footer and header are also centralized */
+header, footer {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
-.map-container iframe {
-    border: 0;
-    width: 80%;
-    height: 450px;
+/* Centralize navigation links */
+.navbar {
+  text-align: center;
+  background-color: rgba(255, 255, 224, 0.8); /* Light cream color with transparency */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: 'Perpetua', serif; /* Apply Perpetua font to nav links */
+}
+
+/* Tables should be responsive */
+table {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 224, 1); /* Cream color for tables */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-family: 'Perpetua', serif; /* Apply Perpetua font to table content */
+}
+
+/* Responsive form fields */
+input[type="text"], select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: 'Perpetua', serif; /* Apply Perpetua font to form fields */
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+  .navbar a {
+    display: block;
+    margin: 5px 0;
+    padding: 10px 0;
+  }
+
+  form, table, .content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  header, footer {
+    padding: 10px 0;
+  }
 }
