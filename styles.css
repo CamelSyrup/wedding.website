@@ -10,6 +10,10 @@ body {
   width: 100%;
   box-sizing: border-box;
   background-color: #f5f5dc; /* Light cream background for the entire site */
+  background-image: url('wildflower_left.png'); /* Replace with your floral pattern image URL */
+  background-repeat: repeat-y;
+  background-position: left, right;
+  background-size: contain;
 }
 
 /* Ensure all containers are centralized */
@@ -39,9 +43,29 @@ form, table, .content {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Style for the nav bar */
+.navbar, .page-title {
+  background-color: #fff8dc; /* Cornsilk background */
+  color: #6b4226; /* Dark brown text */
+  padding: 10px 0;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #dcdcdc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Perpetua', serif; /* Perpetua font */
+}
+
+.page-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
 /* Style form fields */
 input[type="text"], select {
-  width: calc(100% - 30px); /* Adjust width to fit within form */
+  width: calc(75% - 10px); /* Adjust width for name field */
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -49,6 +73,13 @@ input[type="text"], select {
   border: 1px solid #dcdcdc; /* Light grey border */
   border-radius: 5px;
   background-color: #faf0e6; /* Very light cream background */
+  display: inline-block; /* Keep elements on the same line */
+  vertical-align: middle; /* Align with the text box */
+}
+
+select {
+  width: calc(25% - 20px); /* Adjust width for dropdown */
+  margin-left: 10px; /* Space between text box and dropdown */
 }
 
 /* Style for +, -, and submit buttons */
@@ -80,6 +111,38 @@ button:hover {
   margin: 5px; /* Small margin between buttons */
 }
 
+/* Centralize the flip clock */
+.clock-builder-output {
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.clock-builder-output .flip-clock {
+  display: inline-block; /* Keep the clock inline */
+  max-width: 100%;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .clock-builder-output {
+    width: 100%; /* Ensure full width on mobile */
+  }
+
+  .flip-clock {
+    transform: scale(0.8); /* Scale down for mobile */
+  }
+
+  input[type="text"], select {
+    width: calc(100% - 30px); /* Adjust for mobile screens */
+    margin: 5px 0;
+  }
+
+  .form-buttons {
+    flex-direction: column; /* Stack buttons on top of each other for narrow screens */
+  }
+}
+
 /* Responsive form fields and buttons */
 @media (max-width: 768px) {
   input[type="text"], select {
@@ -89,6 +152,17 @@ button:hover {
   .form-buttons {
     flex-direction: column; /* Stack buttons on top of each other for narrow screens */
   }
+}
+
+/* Responsive google map */
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Tables should be responsive */
