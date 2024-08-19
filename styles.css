@@ -9,7 +9,7 @@ body {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  background-color: #f5f5dc; /* Light cream background */
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); 
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll due to pseudo-elements */
 }
