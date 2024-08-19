@@ -1,43 +1,68 @@
-/* Apply these styles to the entire body of the website */
+/* Base body styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Perpetua', serif; /* Perpetua font */
+  font-family: 'Perpetua', serif;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centralizes all content horizontally */
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
-  background-color: #f5f5dc; /* Light cream background for the entire site */
-  background-image: url('wildflower_left.png'); /* Replace with your floral pattern image URL */
+  background-color: #f5f5dc; /* Light cream background */
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll due to pseudo-elements */
+}
+
+/* Floral side images */
+body::before, 
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Approx. 1 inch on desktop screens */
   background-repeat: repeat-y;
-  background-position: left, right;
   background-size: contain;
+  z-index: -1; /* Behind the main content */
+}
+
+body::before {
+  left: 0;
+  background-image: url('wildflower_left.png'); /* Replace with your left-side floral pattern image URL */
+}
+
+body::after {
+  right: 0;
+  background-image: url('wildflower_right.png'); /* Replace with your right-side floral pattern image URL */
 }
 
 /* Ensure all containers are centralized */
 .container {
   width: 100%;
-  max-width: 1200px; /* Maximum width for large screens */
-  margin: 0 auto; /* Centralizes the container */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* Centralize text for all headers */
+/* Centralize text for all headers with subtle shadow */
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-  font-family: 'Perpetua', serif; /* Perpetua font */
-  color: #6b4226; /* Dark brown for contrast with cream background */
+  font-family: 'Perpetua', serif;
+  color: #6b4226;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* Centralize forms, tables, and other block elements */
 form, table, .content {
-  margin: 0 auto; /* Centralize block elements */
+  margin: 0 auto;
   width: 100%;
-  max-width: 600px; /* Ensure block elements fit within mobile screens */
-  background-color: #fff; /* White background for form areas */
+  max-width: 600px;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,8 +70,8 @@ form, table, .content {
 
 /* Style for the nav bar */
 .navbar, .page-title {
-  background-color: #fff8dc; /* Cornsilk background */
-  color: #6b4226; /* Dark brown text */
+  background-color: #fff8dc;
+  color: #6b4226;
   padding: 10px 0;
   margin-bottom: 10px;
   width: 100%;
@@ -55,7 +80,7 @@ form, table, .content {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: bold;
-  font-family: 'Perpetua', serif; /* Perpetua font */
+  font-family: 'Perpetua', serif;
 }
 
 .page-title {
@@ -65,174 +90,75 @@ form, table, .content {
 
 /* Style form fields */
 input[type="text"], select {
-  width: calc(75% - 10px); /* Adjust width for name field */
+  width: calc(75% - 10px);
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  font-family: 'Perpetua', serif; /* Perpetua font */
-  border: 1px solid #dcdcdc; /* Light grey border */
+  font-family: 'Perpetua', serif;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
-  background-color: #faf0e6; /* Very light cream background */
-  display: inline-block; /* Keep elements on the same line */
-  vertical-align: middle; /* Align with the text box */
+  background-color: #faf0e6;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 select {
-  width: calc(25% - 20px); /* Adjust width for dropdown */
-  margin-left: 10px; /* Space between text box and dropdown */
+  width: calc(25% - 20px);
+  margin-left: 10px;
 }
 
 /* Style for +, -, and submit buttons */
 button {
-  font-family: 'Perpetua', serif; /* Perpetua font */
-  background-color: #f5deb3; /* Wheat color for buttons */
-  color: #6b4226; /* Dark brown text color */
+  font-family: 'Perpetua', serif;
+  background-color: #f5deb3;
+  color: #6b4226;
   border: 1px solid #dcdcdc;
   padding: 10px 20px;
-  margin: 10px 5px; /* Small margin between buttons */
+  margin: 10px 5px; /* Make sure buttons appear side by side */
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  display: inline-block; /* Ensure buttons are next to each other */
 }
 
 button:hover {
-  background-color: #d2b48c; /* Tan color on hover */
+  background-color: #edd9b3;
 }
 
-/* Ensure buttons are inline in the form */
-.form-buttons {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.form-buttons button {
-  margin: 5px; /* Small margin between buttons */
-}
-
-/* Centralize the flip clock */
+/* Flipclock centering and responsiveness */
 .clock-builder-output {
-  margin: 20px auto;
+  margin: 0 auto;
+  display: block;
   max-width: 100%;
-  text-align: center;
 }
 
-.clock-builder-output .flip-clock {
-  display: inline-block; /* Keep the clock inline */
-  max-width: 100%;
-  width: auto;
-}
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
+  /* Make the flipclock smaller on mobile */
   .clock-builder-output {
-    width: 100%; /* Ensure full width on mobile */
+    transform: scale(0.8);
+    transform-origin: center;
   }
 
-  .flip-clock {
-    transform: scale(0.8); /* Scale down for mobile */
-  }
-
+  /* Adjust form field sizes for mobile */
   input[type="text"], select {
-    width: calc(100% - 30px); /* Adjust for mobile screens */
+    width: 100%;
     margin: 5px 0;
   }
 
-  .form-buttons {
-    flex-direction: column; /* Stack buttons on top of each other for narrow screens */
+  select {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Keep buttons side by side on mobile */
+  button {
+    width: calc(50% - 10px);
+    margin: 10px 5px;
   }
 }
 
-/* Responsive form fields and buttons */
-@media (max-width: 768px) {
-  input[type="text"], select {
-    width: calc(100% - 20px); /* Adjust for mobile screens */
-  }
-
-  .form-buttons {
-    flex-direction: column; /* Stack buttons on top of each other for narrow screens */
-  }
-}
-
-/* Responsive google map */
+/* Google Maps embed responsiveness */
 iframe {
   max-width: 100%;
-  width: 100%;
   height: auto;
-  border: 0;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Tables should be responsive */
-table {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background-color: rgba(245, 222, 179, 1); /* Wheat color for tables */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: center;
-  font-family: 'Perpetua', serif; /* Perpetua font */
-}
-
-/* Navbar styles */
-.navbar {
-  text-align: center;
-  background-color: rgba(255, 255, 224, 0.8); /* Light cream color with transparency */
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border-bottom: 2px solid #dcdcdc;
-}
-
-.navbar a {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-family: 'Perpetua', serif; /* Perpetua font */
-  color: #6b4226; /* Dark brown text */
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-/* Footer styles */
-footer {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  font-family: 'Perpetua', serif; /* Perpetua font */
-  background-color: #f5deb3; /* Wheat background */
-  color: #6b4226; /* Dark brown text */
-  border-top: 2px solid #dcdcdc;
-  box-sizing: border-box;
-}
-
-/* Adjust for mobile screens */
-@media (max-width: 768px) {
-  .navbar a {
-    display: block;
-    margin: 5px 0;
-    padding: 10px 0;
-  }
-
-  form, table, .content {
-    width: 100%;
-    padding: 10px;
-  }
-
-  header, footer {
-    padding: 10px 0;
-  }
+  border: none;
 }
