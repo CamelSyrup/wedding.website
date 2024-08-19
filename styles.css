@@ -47,24 +47,22 @@ body::after {
 }
 
 /* Centralize text for all headers with subtle shadow */
-h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
   text-align: center;
   font-family: 'Perpetua', serif;
   color: #6b4226;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #dcdcdc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Lobster', sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
   color: #6b4226;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #dcdcdc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
