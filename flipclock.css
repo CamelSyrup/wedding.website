@@ -67,7 +67,7 @@
 /* Skeleton */
 .flip-clock-wrapper ul {
   position: relative;
-  float: center;
+  float: left;
   margin: 5px;
   width: 60px;
   height: 90px;
