@@ -80,7 +80,7 @@ form, table, .content {
 
 /* Style for the nav bar */
 .navbar, .page-title {
-  background-color: #fff8dc;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); 
   color: #6b4226;
   padding: 10px 0;
   margin-bottom: 10px;
