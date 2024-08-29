@@ -46,6 +46,13 @@ body::after {
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Amoresa';
+    src: url('amoresa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Centralize text for all headers with subtle shadow */
 h3, h4, h5, h6 {
   text-align: center;
@@ -57,7 +64,7 @@ h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-family: 'Lobster', sans-serif;
+  font-family: 'Amoresa', sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
