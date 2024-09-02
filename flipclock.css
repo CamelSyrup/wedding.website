@@ -1,5 +1,12 @@
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
+.flip-clock-wrapper ul {
+    float: none;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+
 .flip-clock-wrapper * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -38,7 +45,7 @@
 
 /* Main */
 .flip-clock-wrapper {
-  font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+  font: bold 15px 'Perpetua', serif;
   -webkit-user-select: none; }
 
 .flip-clock-wrapper .flip-clock-meridium {
@@ -67,7 +74,7 @@
 /* Skeleton */
 .flip-clock-wrapper ul {
   position: relative;
-  float: left;
+  float: none;
   margin: 5px;
   width: 60px;
   height: 90px;
@@ -75,7 +82,7 @@
   font-weight: bold;
   line-height: 87px;
   border-radius: 6px;
-  background: #000;
+  background: #8B4513 !important;
 }
 
 .flip-clock-wrapper ul li {
@@ -133,7 +140,7 @@
   z-index: 5;
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: #5C3317 !important;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .flip-clock-wrapper ul li a div.down {
@@ -150,10 +157,10 @@
   z-index: 1;
   width: 100%;
   height: 200%;
-  color: #ccc;
+  color: #FFFDD0 !important;
   text-shadow: 0 1px 2px #000;
   text-align: center;
-  background-color: #333;
+  background-color: #8B4513 !important;
   border-radius: 6px;
   font-size: 70px; }
 
@@ -176,7 +183,7 @@
   z-index: 5; }
 
 .flip-clock-divider {
-  float: left;
+  float: none;
   display: inline-block;
   position: relative;
   width: 20px;
@@ -187,7 +194,7 @@
 
 .flip-clock-dot {
   display: block;
-  background: #323434;
+  background: #5C3317 !important;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -468,7 +475,7 @@
 
 /* Main */
 .flip-clock-small-wrapper {
-  font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+  font: bold 15px 'Perpetua', serif;
   -webkit-user-select: none; }
 
 .flip-clock-small-wrapper .flip-clock-meridium {
@@ -497,7 +504,7 @@
 /* Skeleton */
 .flip-clock-small-wrapper ul {
   position: relative;
-  float: left;
+  float: none;
   margin: 2px;
   width: 30px;
   padding: 0;
@@ -506,7 +513,7 @@
   font-weight: bold;
   line-height: 37px;
   border-radius: 6px;
-  background: #000;
+  background: #8B4513;
 }
 
 .flip-clock-small-wrapper ul li {
@@ -564,7 +571,7 @@
   z-index: 5;
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: #5C3317;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .flip-clock-small-wrapper ul li a div.down {
@@ -581,10 +588,10 @@
   z-index: 1;
   width: 100%;
   height: 200%;
-  color: #ccc;
+  color: #FFFDD0;
   text-shadow: 0 1px 2px #000;
   text-align: center;
-  background-color: #333;
+  background-color: #8B4513;
   border-radius: 6px;
   font-size: 20px; }
 
@@ -607,7 +614,7 @@
   z-index: 5; }
 
 .flip-clock-small-wrapper .flip-clock-divider {
-  float: left;
+  float: none;
   display: inline-block;
   position: relative;
   width: 15px;
@@ -618,7 +625,7 @@
 
 .flip-clock-small-wrapper .flip-clock-dot {
   display: block;
-  background: #323434;
+  background: #5C3317;
   width: 5px;
   height: 5px;
   position: absolute;
