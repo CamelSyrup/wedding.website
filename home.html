@@ -14,11 +14,12 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="#rsvp">RSVP</a>
         <a href="#location">Location</a>
         <a href="#gifts">Gifts</a>
         <a href="#accommodation">Accommodation</a>
+        <a href="#faq-section">FAQs</a>
     </nav>
 
     <!-- Heading Section -->
@@ -87,50 +88,85 @@ $(function(){
     <div class="container" id="gifts">
         <h2>Wedding Gifts</h2>
 	<p><strong>If you would like to get us a wedding gift, we ask that you instead contribute to one of the below activities for our honeymoon. Thank you!</strong></p>
-        <table class="special-table">
+        <table class="gifts-table">
             <tr>
                 <th>Activity</th>
                 <th>Price</th>
                 <th>Payment</th>
             </tr>
             <tr>
-                <td>Snorkeling Adventure</td>
-                <td>$100</td>
+                <td>Private Sunset Dhow Cruise</td>
+                <td>£100</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Safari Tour</td>
-                <td>$150</td>
+                <td>Spice Farm Tour with Cooking Class</td>
+                <td>£50</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Snorkeling Adventure</td>
-                <td>$100</td>
+                <td>Snorkeling Adventure at Mnemba Atoll</td>
+                <td>£70</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Safari Tour</td>
-                <td>$150</td>
+                <td>Swim with Dolphins in Kizimkazi</td>
+                <td>£60</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Snorkeling Adventure</td>
-                <td>$100</td>
+                <td>Sunset Horseback Ride on the Beach</td>
+                <td>£80</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Safari Tour</td>
-                <td>$150</td>
+                <td>Private Seafood Cooking Class with a Local Chef</td>
+                <td>£100</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Snorkeling Adventure</td>
-                <td>$100</td>
+                <td>Jozani Forest Reserve Monkey Tour</td>
+                <td>£30</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <tr>
-                <td>Safari Tour</td>
-                <td>$150</td>
+                <td>Private Island Picnic at Nakupenda Beach</td>
+                <td>£120</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Wine Tasting Evening at a Boutique Resort</td>
+                <td>£90</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Deep Sea Fishing Excursion</td>
+                <td>£300</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Prison Island and Giant Tortoises</td>
+                <td>£60</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Traditional Taarab Music Evening</td>
+                <td>£60</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Kite Surfing Lessons in Paje</td>
+                <td>£70</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Stone Town Historical Walking Tour</td>
+                <td>£40</td>
+                <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
+            </tr>
+            <tr>
+                <td>Luxury Sailing Trip Around Zanzibar Archipelago</td>
+                <td>£250</td>
                 <td><button onclick="window.location.href='your-bank-link-here';">Buy</button></td>
             </tr>
             <!-- Add more activities as needed -->
@@ -190,6 +226,106 @@ $(function(){
     </div>
 </section>
 
+<section id="faq-section">
+    <h2>FAQs</h2>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(0)">
+            <h4>What is the dress code?</h4>
+        </div>
+        <div class="faq-answer" id="answer-0">
+            <p>The dress code is formal. We encourage anyone considering a bow tie to go for it!</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(1)">
+            <h4>Are children invited?</h4>
+        </div>
+        <div class="faq-answer" id="answer-1">
+            <p>No, we've got an 18+ rule across the guest list and venue.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(2)">
+            <h4>Can I bring a plus one?</h4>
+        </div>
+        <div class="faq-answer" id="answer-2">
+            <p>No, we have a restrictive limit at the venue, therefore, are unable to accommodate any guests not named on the invites.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(3)">
+            <h4>What time should we arrive?</h4>
+        </div>
+        <div class="faq-answer" id="answer-3">
+            <p>We ask that you arrive no later than 1:30pm as the ceremony starts at 2pm.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(4)">
+            <h4>How do I RSVP?</h4>
+        </div>
+        <div class="faq-answer" id="answer-4">
+            <p>Really!? But on that note, please RSVP before 31<sup>st</sup> October 2024.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(5)">
+            <h4>Is there an arrangement for transport to and from the venue?</h4>
+        </div>
+        <div class="faq-answer" id="answer-5">
+            <p>No, everyone needs to organise their own transport.</p>
+            <p>There are a number of taxi companies in the area, which can be found here.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(6)">
+            <h4>Can I take photos during the ceremony?</h4>
+        </div>
+        <div class="faq-answer" id="answer-6">
+            <p>If you value your life, make sure that Syd doesn't see you.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(7)">
+            <h4>What should I do if I need to cancel last minute?</h4>
+        </div>
+        <div class="faq-answer" id="answer-7">
+            <p>Firstly, we hope everything is okay! Secondly, just let us know as soon as possible on WhatsApp and submit a new RSVP entry selecting 'No'.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(8)">
+            <h4>Will there be vegetarian / vegan / gluten-free menu options?</h4>
+        </div>
+        <div class="faq-answer" id="answer-8">
+            <p>Not options, but let us know ASAP and we can co-ordinate with the caterers so that you get the relevant dietry adjustments on your meal.</p>
+        </div>
+    </div>
+
+    <!-- Add additional FAQs in the same structure -->
+    <script src="faq.js"></script>
+</section>
+
 
 </body>
+
+<footer id="footer">
+    <a href="#navbar" id="back-to-top">Back to Top</a>
+    <div class="instagram-link">
+    <a href="https://www.instagram.com/sydneyleex?igsh=bHJtOXFydHQ1dTRh" target="_blank">
+        <img src="insta-normal.png" alt="Instagram" class="instagram-icon">
+    </a>
+    </div>    
+    <div class="footer-subtext">© Minchellas Ltd (but seriously this was all Joe)</div>
+</footer>
+
+
 </html>
