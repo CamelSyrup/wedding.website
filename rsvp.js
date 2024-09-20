@@ -18,29 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const rsvpRows = document.getElementById('rsvpRows');
   const rsvpMessage = document.getElementById('rsvpMessage');
 
-  addRowBtn.addEventListener('click', function () {
-    const newRow = document.createElement('div');
-    newRow.className = 'rsvp-row';
-    newRow.innerHTML = `
-        <input type="text" name="name" placeholder="Full Name (First Last)" class="rsvp-name" required>
-        <select name="rsvp" class="rsvp-select" required>
-            <option value="" disabled selected>Yes/No</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>`;
-    rsvpRows.appendChild(newRow);
-  });
-
-  removeRowBtn.addEventListener('click', function () {
-    const rows = document.querySelectorAll('.rsvp-row');
-    if (rows.length > 1) {
-      rows[rows.length - 1].remove();
-    }
-  });
-
-  rsvpForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
+  // Function to handle form submission
+  function submitForm() {
     const nameInputs = document.querySelectorAll('.rsvp-name');
     let allValid = true;
     let invalidName = '';
@@ -85,5 +64,53 @@ document.addEventListener('DOMContentLoaded', function () {
       rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
       rsvpMessage.style.color = "red";
     }
+  }
+
+  // Add event listener to dynamically add RSVP rows
+  addRowBtn.addEventListener('click', function () {
+    const newRow = document.createElement('div');
+    newRow.className = 'rsvp-row';
+    newRow.innerHTML = `
+        <input type="text" name="name" placeholder="Full Name (First Last)" class="rsvp-name" required>
+        <select name="rsvp" class="rsvp-select" required>
+            <option value="" disabled selected>Yes/No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>`;
+    rsvpRows.appendChild(newRow);
+
+    // Re-add 'Enter' key functionality to newly added input fields
+    addEnterKeyFunctionality();
   });
+
+  // Add event listener to remove RSVP rows
+  removeRowBtn.addEventListener('click', function () {
+    const rows = document.querySelectorAll('.rsvp-row');
+    if (rows.length > 1) {
+      rows[rows.length - 1].remove();
+    }
+  });
+
+  // Add event listener for form submission
+  rsvpForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitForm();
+  });
+
+  // Function to add 'Enter' key functionality to all input fields
+  function addEnterKeyFunctionality() {
+    const nameInputs = document.querySelectorAll('.rsvp-name');
+
+    nameInputs.forEach(function (input) {
+      input.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevent the default form submission (if inside form)
+          submitForm(); // Trigger form submission on Enter key press
+        }
+      });
+    });
+  }
+
+  // Initial call to add Enter key functionality
+  addEnterKeyFunctionality();
 });
