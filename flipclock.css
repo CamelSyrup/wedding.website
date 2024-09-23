@@ -1,5 +1,33 @@
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
+
+@media only screen and (max-width: 600px) {
+  .flip-clock-wrapper {
+    transform: scale(0.8); /* Shrink the clock to 80% of its original size */
+    transform-origin: center; /* Keep it centered while scaling */
+    width: 100%; /* Ensure it fits the screen */
+    max-width: 100%; /* Prevent it from overflowing */
+  }
+
+  /* Optional: Adjust spacing between sections */
+  .flip-clock-divider {
+    margin: 20px 0; /* Adjust margin for better spacing on mobile */
+  }
+
+  /* Optional: Adjust font size within the flip clock */
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 0px; /* Adjust font size for readability on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
 .flip-clock-wrapper ul {
     float: none;
     margin: 0 auto;
@@ -194,7 +222,7 @@
 
 .flip-clock-dot {
   display: block;
-  background: #5C3317 !important;
+  background: #eed9c4 !important;
   width: 10px;
   height: 10px;
   position: absolute;
