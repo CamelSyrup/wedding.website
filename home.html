@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="flipclock.css">
 </head>
@@ -16,6 +19,9 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
+
+        <h1 class="navbar-title">Sydney & Joseph</h1>
+        <div class="navbar-links">
         <a href="#rsvp">RSVP</a>
         <a href="#location">Location</a>
         <a href="#gifts">Gifts</a>
@@ -23,13 +29,28 @@
         <a href="#faq-section">FAQs</a>
     </nav>
 
-    <!-- Heading Section -->
-    <div class="page-title" id="intro">
-        <h1><strong>Joseph & Sydney</strong></h1>
-	<h3><i>are getting married</i></h3>
-        <p>15<sup>th</sup> August 2025</p>
-    </div>
+<!-- Full-width landing section below navbar -->
+<div class="landing-section">
+  <!-- Scrolling images -->
+  <div class="scrolling-images">
+    <img src="booth1.jpg" alt="Photo 1">
+    <img src="booth2.jpg" alt="Photo 2">
+    <img src="booth3.jpg" alt="Photo 3">
+    <img src="booth4.jpg" alt="Photo 4">
 
+    <!-- Duplicate the images for seamless looping -->
+    <img src="booth1.jpg" alt="Photo 1">
+    <img src="booth2.jpg" alt="Photo 2">
+    <img src="booth3.jpg" alt="Photo 3">
+    <img src="booth4.jpg" alt="Photo 4">
+  </div>
+
+  <!-- Centered Text -->
+  <div class="landing-text">
+    <h1>We are getting married</h1>
+    <h1>15<sup>th</sup> August 2025</h1>
+  </div>
+</div>
 
 <div><p><br></p></div>
 	
@@ -247,6 +268,7 @@ $(function(){
                 </a>
                 </td>
             </tr>
+
             <!-- Add more activities as needed -->
         </table>
         <script src="gifts.js" defer></script>
@@ -270,27 +292,30 @@ $(function(){
 </div>
 
 <div class="accommodation-slot">
-    <a href="" class="accommodation-image" target="_blank">
-        <img src=".jpg" alt="The George Hotel">
+    <a href="https://www.no38thepark.com/" class="accommodation-image" target="_blank">
+        <img src="No38.jpg" alt="No38 The Park">
     </a>
     <div class="accommodation-details">
-        <h4 class="accommodation-title">The George Hotel - <i>Cheltenham</i></h4>
+        <h4 class="accommodation-title">No38 The Park - <i>Cheltenham</i></h4>
         <p class="accommodation-description">
             Traditional Hotel with high end rooms, which is 7 miles from the venue.<br>
-            T: 01242 394015
+            T: 01242 394014
         </p>
     </div>
 </div>
 
-    <div class="accommodation-slot">
-        <a href="link-to-full-details-5.html" class="accommodation-image">
-            <img src="path-to-image-5.jpg" alt="Accommodation 5">
-        </a>
-        <div class="accommodation-details">
-            <h4 class="accommodation-title">Accommodation Title 5</h4>
-            <p class="accommodation-description">This is a short description of the accommodation. It gives a brief overview of what to expect.</p>
-        </div>
+<div class="accommodation-slot">
+    <a href="https://www.theabbeytownhouse.co.uk/" class="accommodation-image" target="_blank">
+        <img src="abbey_town.jpg" alt="The Abbey Town House - Cheltenham">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">The Abbey Town House - <i>Cheltenham</i></h4>
+        <p class="accommodation-description">
+            Situated in Cheltenham, which is 7 miles from the venue.<br>
+            T: 01242 384437
+        </p>
     </div>
+</div>
 
 <div class="accommodation-slot">
     <a href="https://www.premierinn.com/gb/en/hotels/england/gloucestershire/cheltenham/cheltenham-town-centre.html" class="accommodation-image" target="_blank">
@@ -325,7 +350,7 @@ $(function(){
     <h2>FAQs</h2>
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(0)">
-            <h4>What is the dress code?</h4>
+            <p>What is the dress code?</p>
         </div>
         <div class="faq-answer" id="answer-0">
             <p>The dress code is formal. We encourage anyone considering a bow tie to go for it!</p>
@@ -334,7 +359,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(1)">
-            <h4>Are children invited?</h4>
+            <p>Are children invited?</p>
         </div>
         <div class="faq-answer" id="answer-1">
             <p>No, we've got an 18+ rule across the guest list and venue.</p>
@@ -343,7 +368,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(2)">
-            <h4>Can I bring a plus one?</h4>
+            <p>Can I bring a plus one?</p>
         </div>
         <div class="faq-answer" id="answer-2">
             <p>No, we have a restrictive limit at the venue, therefore, are unable to accommodate any guests not named on the invites.</p>
@@ -352,7 +377,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(3)">
-            <h4>What time should we arrive?</h4>
+            <p>What time should we arrive?</p>
         </div>
         <div class="faq-answer" id="answer-3">
             <p>We ask that you arrive no later than 1:30pm as the ceremony starts at 2pm.</p>
@@ -361,7 +386,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(4)">
-            <h4>How do I RSVP?</h4>
+            <p>How do I RSVP?</p>
         </div>
         <div class="faq-answer" id="answer-4">
             <p>Really!? But on that note, please RSVP before 31<sup>st</sup> October 2024.</p>
@@ -370,7 +395,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(5)">
-            <h4>Is there an arrangement for transport to and from the venue?</h4>
+            <p>Is there an arrangement for transport to and from the venue?</p>
         </div>
         <div class="faq-answer" id="answer-5">
             <p>No, everyone needs to organise their own transport.</p>
@@ -380,7 +405,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(6)">
-            <h4>Can I take photos during the ceremony?</h4>
+            <p>Can I take photos during the ceremony?</p>
         </div>
         <div class="faq-answer" id="answer-6">
             <p>If you value your life, make sure that Syd doesn't see you.</p>
@@ -389,7 +414,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(7)">
-            <h4>What should I do if I need to cancel last minute?</h4>
+            <p>What should I do if I need to cancel last minute?</p>
         </div>
         <div class="faq-answer" id="answer-7">
             <p>Firstly, we hope everything is okay! Secondly, just let us know as soon as possible on WhatsApp and submit a new RSVP entry selecting 'No'.</p>
@@ -398,7 +423,7 @@ $(function(){
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(8)">
-            <h4>Will there be vegetarian / vegan / gluten-free menu options?</h4>
+            <p>Will there be vegetarian / vegan / gluten-free menu options?</p>
         </div>
         <div class="faq-answer" id="answer-8">
             <p>Not options, but let us know ASAP and we can co-ordinate with the caterers so that you get the relevant dietry adjustments on your meal.</p>
