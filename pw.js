@@ -5,7 +5,7 @@ function checkPassword() {
     if (enteredPassword === correctPassword) {
         window.location.href = 'home.html'; // Redirect to the main content page
     } else {
-        document.getElementById('error-message').innerText = 'Incorrect password. Please try again.';
+        document.getElementById('error-message').innerText = 'Incorrect password, please try again. The password can be found on your invite.';
     }
 }
 
