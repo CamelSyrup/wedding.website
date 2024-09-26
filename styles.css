@@ -3,16 +3,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Perpetua', serif;
-  color: #556B2F;
+  color: black;
   text-align: center;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%
-    min-height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   align-items: center;
-  /* background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */  /* this is edited out, gradient background */
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll due to pseudo-elements */
 }
@@ -31,8 +30,8 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('floral-background2.jpg') repeat;
-    opacity: 0.4; /* Adjust this value to change transparency */
+    background: url('ring-bg.png') repeat; 
+    opacity: 0.5; /* Adjust this value to change transparency */
     z-index: -1; /* Ensure the background stays behind the content */
 }
 
@@ -84,23 +83,30 @@ html {
   font-style: bold;
 }
 
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 /* Centralize text for all headers with subtle shadow */
 h3, h4, h5, h6 {
   text-align: center;
   font-family: 'Perpetua', serif;
-  color: #556B2F
+  color: black;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
 h1 {
-  font-family: "Playfair Display SC", serif;
+  font-family: "Homemade Apple", cursive;
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   text-align: center;
-  color: #556B2F
+  color: black;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -111,7 +117,7 @@ h2 {
     font-weight: 400;
     font-style: normal;
     text-align: center;
-    color: #556B2F;
+    color: black;
     background: white;
     width: 100%;
     max-width: 700px;
@@ -129,7 +135,7 @@ h2::after {
     display: block;
     width: 100%; /* Full width underline */
     height: 1px; /* Adjust thickness */
-    background-color: #556B2F; /* Same color as the text */
+    background-color: black; /* Same color as the text */
     position: absolute;
     bottom: 0;
     left: 0;
@@ -149,12 +155,12 @@ form, table, .content {
 
 /* Navigation Bar */
 .navbar {
-    background-color: #fbeee6; 
-    opacity: 0.8;
+    background-color: #f1f1f1; 
+    opacity: 0.75;
     border-bottom: 1px solid #ddd; /* Similar border styling */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack title and buttons vertically */
     align-items: center;
     padding: 10px 0;
     position: float; /* Keeps the navbar at the top */
@@ -162,31 +168,193 @@ form, table, .content {
     z-index: 1000; /* Ensures it stays above other content */
 }
 
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff; 
+    border-bottom: 1px solid #ddd; /* Similar border styling */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block; /* Change to block to allow stacking */
+    text-align: center; /* Center align the content */
+    padding: 10px 0;
+    position: float; /* Keeps the navbar at the top */
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Navigation Title */
+.navbar-title {
+    font-size: 40px; /* Adjust the size as needed */
+    font-weight: bold;
+    margin: 0 0 15px; /* Remove top margin and keep bottom margin */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Links Container */
+.navbar-links {
+    display: inline-block; /* Inline block to keep buttons side by side */
+}
+
 /* Navigation Links */
 .navbar a {
-    color: #556B2F; /* Text color */
-    text-decoration: bold;
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
     padding: 8px 12px; /* Creates the hoverable area around the text */
     border-radius: 5px; /* Rounded corners for the hover effect */
     margin: 0 5px;
-    transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+    position: relative; /* For positioning the underline */
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Underline Effect */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the underline */
+    bottom: -0.2px; /* Slight gap beneath the text */
+    transform: translateX(-50%); /* Center the underline */
+    width: 3ch; /* 3 characters wide */
+    height: 3px; /* Thick underline */
+    background-color: black; /* Same color as text */
+    transition: height 0.3s ease; /* Smooth transition for the underline */
 }
 
 /* Hover Effect */
 .navbar a:hover {
-    background-color: #f5e6d0; /* Light brown background on hover */
+    background-color: #000000; /* Black background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.navbar a:hover::before {
+    height: 0; /* Remove underline on hover */
 }
 
 @media only screen and (max-width: 600px) {
-    .navbar {
+    .navbar-links {
         justify-content: center; /* Keep the nav centered */
     }
 
     .navbar a {
-        padding: 8px 10px; /* Reduce padding */
+        padding: 5px 5px; /* Reduce padding */
         margin: 0 3px; /* Reduce margin between links */
     }
 }
+
+
+
+
+
+/* Full-width landing section */
+.landing-section {
+  width: 100vw; /* Full width of the viewport */
+  height: calc(100vh - 60px); /* Full height minus the navbar */
+  position: relative; /* Needed for text overlay */
+  overflow: hidden; /* Prevent images from overflowing */
+  border-top: 2px solid black; /* Top border */
+  border-bottom: 2px solid black; /* Bottom border */
+  display: flex;
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+  background-color: #f0f0f0; /* Background color behind images */
+}
+
+/* Scrolling images container */
+.scrolling-images {
+  display: flex;
+  position: absolute; /* Positioned inside the landing section */
+  top: 0;
+  left: 0; /* Start with the first image at the left of the screen */
+  height: 100%;
+  animation-timing-function: linear; /* Smooth scrolling */
+}
+
+/* Each individual image */
+.scrolling-images img {
+  height: 100%; /* Full height of the section */
+  flex-shrink: 0; /* Prevent images from shrinking */
+  object-fit: cover; /* Ensure images fill the height */
+}
+
+/* Centered text overlay */
+.landing-text {
+  position: absolute; /* On top of scrolling images */
+  z-index: 2; /* Ensure text is above the images */
+  color: white !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+.landing-text h1 {
+  font-size: 50px;
+  font-family: "Homemade Apple", cursive;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Desktop and Large Screens */
+@media only screen and (min-width: 769px) {
+  .scrolling-images {
+    width: 200%; /* Scrollable width with duplicated images */
+    animation: scrollImagesDesktop 40s linear infinite; /* Adjust timing for desktop */
+  }
+
+  .scrolling-images img {
+    width: 25%; /* Four images, each taking up 25% of the width */
+  }
+
+  @keyframes scrollImagesDesktop {
+    0% {
+      transform: translateX(0); /* Start with the first image */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll through the full set */
+    }
+  }
+}
+
+/* Tablet Adjustments */
+@media only screen and (max-width: 768px) {
+  .scrolling-images {
+    width: 200%; /* Adjust scrollable width */
+    animation: scrollImagesTablet 30s linear infinite; /* Adjust timing for tablets */
+  }
+
+  .scrolling-images img {
+    width: 33.33%; /* Each image is 33.33% of the container on tablets */
+  }
+
+  @keyframes scrollImagesTablet {
+    0% {
+      transform: translateX(0); /* Start with the first image */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll through the full set */
+    }
+  }
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 480px) {
+  .scrolling-images {
+    width: 200%; /* Scrollable width with duplicated images */
+    animation: scrollImagesMobile 20s linear infinite; /* Adjust timing for mobile */
+  }
+
+  .scrolling-images img {
+    width: 50%; /* Double the width of the images on mobile */
+  }
+
+  @keyframes scrollImagesMobile {
+    0% {
+      transform: translateX(0); /* Start with the first image */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll through the full set */
+    }
+  }
+}
+
+
+
 
 .page-title {
     font-size: 50px;
@@ -236,6 +404,25 @@ input[type="text"], select {
 .gifts-table tr:nth-child(even) {
     background-color: #fdf2e9; /* Light cream color */
 }
+
+/* Target the first column (50% of the table width) */
+.gifts-table td:nth-child(1), 
+.gifts-table th:nth-child(1) {
+    width: 40%;
+}
+
+/* Target the second column (Price, 25% of the table width) */
+.gifts-table td:nth-child(2), 
+.gifts-table th:nth-child(2) {
+    width: 30%;
+}
+
+/* Target the third column (Quantity, 25% of the table width) */
+.gifts-table td:nth-child(3), 
+.gifts-table th:nth-child(3) {
+    width: 30%;
+}
+
 
 /* Optional: Adjust the Header Row */
 .gifts-table tr:first-child {
@@ -299,7 +486,7 @@ button {
 }
 
 button:hover {
-  background-color: #edd9b3;
+  background-color: #e6d9cf;
 }
 
 /* Flipclock centering and responsiveness */
@@ -431,7 +618,7 @@ iframe {
 
 /* FAQ Question Styles */
 .faq-question {
-    background-color: #fef5e7;
+    background-color: #fdf2e9;
     padding: 15px;
     cursor: pointer;
     border: 1px solid #ddd; /* Light border to define the edges */
@@ -463,7 +650,7 @@ iframe {
 
 /* Optional: Change background color on hover */
 .faq-question:hover {
-    background-color: #f1f1f1; /* Slightly off-white for hover effect */
+    background-color: #e6d9cf; /* Slightly off-white for hover effect */
 }
 
 
