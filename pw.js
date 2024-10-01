@@ -1,6 +1,6 @@
 function checkPassword() {
     var enteredPassword = document.getElementById('password').value;
-    var correctPassword = 'sydandjoe2209'; // Change this to your password
+    var correctPassword = '150825'; // Change this to your password
 
     if (enteredPassword === correctPassword) {
         window.location.href = 'home.html'; // Redirect to the main content page
