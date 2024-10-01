@@ -24,8 +24,8 @@
         <div class="navbar-links">
         <a href="#rsvp">RSVP</a>
         <a href="#location">Location</a>
-        <a href="#gifts">Gifts</a>
         <a href="#accommodation">Accommodation</a>
+        <a href="#gifts">Gifts</a>
         <a href="#faq-section">FAQs</a>
     </nav>
 
@@ -93,6 +93,9 @@ $(function(){
         <button type="button" id="addRowBtn">Add</button>
         <button type="button" id="removeRowBtn">Remove</button>
         <button type="submit">Submit</button>
+        <p>We politely request that only the people listed in the invitation are present.</p>
+        <p>Whilst we love your children, we have decided that our wedding will be an adult-only occasion.</p>
+        <p>If you have any dietary requirements, please contact us as soon as possible so that we can make arrangements.</p>
         <p id="rsvpMessage"></p>
     </form>
     <script src="rsvp.js"></script>
@@ -103,16 +106,89 @@ $(function(){
     <div class="container" id="location">
         <div class="map-container">
         <h2>Location</h2>
-        <p><strong>The Barn, Upcote Farm, Cheltenham, Withington, Cheltenham GL54 4BL</strong></p>
+        <p><strong>The Barn at Upcote, Cheltenham, Withington, Cheltenham GL54 4BL</strong></p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.0078662371106!2d-1.9718898233598003!3d51.84255207189156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487118244ead4bed%3A0xb6940532a9035efc!2sThe%20Barn%20at%20Upcote!5e0!3m2!1sen!2suk!4v1724957042027!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
+
+
+<section class="accommodation-section" id="accommodation">
+<div class="section-container">	
+<h2>Accommodation</h2>
+    
+<div class="accommodation-slot">
+    <a href="https://www.georgehotelcheltenham.com/hotel-bedrooms/" class="accommodation-image" target="_blank">
+        <img src="george-hotel.jpg" alt="The George Hotel">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">The George Hotel - <i>Cheltenham</i></h4>
+        <p class="accommodation-description">
+            Traditional Hotel with high end rooms, which is 7 miles from the venue. This one has been tried and tested by us and we would definitely recommend!<br>
+            T: 01242 394015
+        </p>
+    </div>
+</div>
+
+<div class="accommodation-slot">
+    <a href="https://www.no38thepark.com/" class="accommodation-image" target="_blank">
+        <img src="No38.jpg" alt="No38 The Park">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">No38 The Park - <i>Cheltenham</i></h4>
+        <p class="accommodation-description">
+            Traditional Hotel with high end rooms, which is 7 miles from the venue.<br>
+            T: 01242 394014
+        </p>
+    </div>
+</div>
+
+<div class="accommodation-slot">
+    <a href="https://www.theabbeytownhouse.co.uk/" class="accommodation-image" target="_blank">
+        <img src="abbey_town.jpg" alt="The Abbey Town House - Cheltenham">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">The Abbey Town House - <i>Cheltenham</i></h4>
+        <p class="accommodation-description">
+            Situated in Cheltenham, which is 7 miles from the venue.<br>
+            T: 01242 384437
+        </p>
+    </div>
+</div>
+
+<div class="accommodation-slot">
+    <a href="https://www.premierinn.com/gb/en/hotels/england/gloucestershire/cheltenham/cheltenham-town-centre.html" class="accommodation-image" target="_blank">
+        <img src="premier-inn.jpg" alt="Premier Inn - Cheltenham">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">Premier Inn - <i>Cheltenham</i></h4>
+        <p class="accommodation-description">
+            Situated in Cheltenham Town Square, which is 7 miles from the venue.<br>
+            T: 0871 527 9668
+        </p>
+    </div>
+</div>
+
+<div class="accommodation-slot">
+    <a href="https://www.thefrogmill.co.uk/" class="accommodation-image" target="_blank">
+        <img src="frogmill-inn.png" alt="The Frogmill Inn">
+    </a>
+    <div class="accommodation-details">
+        <h4 class="accommodation-title">The Frogmill Inn - <i>Shipton Oliffe</i></h4>
+        <p class="accommodation-description">
+            Classic Pub with accommodation, which is 2 miles from the venue.<br>
+            T: 01242 386364
+        </p>
+    </div>
+</div>
+
+</section>
+
 
     <!-- Gifts Section -->
     <div class="container" id="gifts">
     <div class="section-container">        
             <h2>Wedding Gifts</h2>
-	    <p><strong>If you would like to get us a wedding gift, we ask that you instead contribute to one of the below activities for our honeymoon. Thank you!</strong></p>
+	    <p><strong>We kindly request no physical gifts. Should you wish to help us celebrate with a gift, we ask that you contribute to one of the below activities for our honeymoon - we are planning to go on a Safari in Tanzania, followed by some island time in Zanzibar.</strong></p>
             <table class="gifts-table">
             <tr>
                 <th>Activity</th>
@@ -273,165 +349,89 @@ $(function(){
         </table>
         <script src="gifts.js" defer></script>
     </div>
-
-<section class="accommodation-section" id="accommodation">
-<div class="section-container">	
-<h2>Accommodation</h2>
-    
-<div class="accommodation-slot">
-    <a href="https://www.georgehotelcheltenham.com/hotel-bedrooms/" class="accommodation-image" target="_blank">
-        <img src="george-hotel.jpg" alt="The George Hotel">
-    </a>
-    <div class="accommodation-details">
-        <h4 class="accommodation-title">The George Hotel - <i>Cheltenham</i></h4>
-        <p class="accommodation-description">
-            Traditional Hotel with high end rooms, which is 7 miles from the venue.<br>
-            T: 01242 394015
-        </p>
-    </div>
+</div>
 </div>
 
-<div class="accommodation-slot">
-    <a href="https://www.no38thepark.com/" class="accommodation-image" target="_blank">
-        <img src="No38.jpg" alt="No38 The Park">
-    </a>
-    <div class="accommodation-details">
-        <h4 class="accommodation-title">No38 The Park - <i>Cheltenham</i></h4>
-        <p class="accommodation-description">
-            Traditional Hotel with high end rooms, which is 7 miles from the venue.<br>
-            T: 01242 394014
-        </p>
-    </div>
-</div>
-
-<div class="accommodation-slot">
-    <a href="https://www.theabbeytownhouse.co.uk/" class="accommodation-image" target="_blank">
-        <img src="abbey_town.jpg" alt="The Abbey Town House - Cheltenham">
-    </a>
-    <div class="accommodation-details">
-        <h4 class="accommodation-title">The Abbey Town House - <i>Cheltenham</i></h4>
-        <p class="accommodation-description">
-            Situated in Cheltenham, which is 7 miles from the venue.<br>
-            T: 01242 384437
-        </p>
-    </div>
-</div>
-
-<div class="accommodation-slot">
-    <a href="https://www.premierinn.com/gb/en/hotels/england/gloucestershire/cheltenham/cheltenham-town-centre.html" class="accommodation-image" target="_blank">
-        <img src="premier-inn.jpg" alt="Premier Inn - Cheltenham">
-    </a>
-    <div class="accommodation-details">
-        <h4 class="accommodation-title">Premier Inn - <i>Cheltenham</i></h4>
-        <p class="accommodation-description">
-            Situated in Cheltenham Town Square, which is 7 miles from the venue.<br>
-            T: 0871 527 9668
-        </p>
-    </div>
-</div>
-
-<div class="accommodation-slot">
-    <a href="https://www.thefrogmill.co.uk/" class="accommodation-image" target="_blank">
-        <img src="frogmill-inn.png" alt="The Frogmill Inn">
-    </a>
-    <div class="accommodation-details">
-        <h4 class="accommodation-title">The Frogmill Inn - <i>Shipton Oliffe</i></h4>
-        <p class="accommodation-description">
-            Classic Pub with accommodation, which is 2 miles from the venue.<br>
-            T: 01242 386364
-        </p>
-    </div>
-</div>
-
-</section>
 
 <div class="container" id="faq-section">
 <div class="section-container">
     <h2>FAQs</h2>
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(0)">
-            <p>What is the dress code?</p>
+            <p>What time should we arrive?</p>
         </div>
         <div class="faq-answer" id="answer-0">
-            <p>The dress code is formal. We encourage anyone considering a bow tie to go for it!</p>
+            <p>You are welcome to arrive from 1pm. We kindly ask that you arrive no later than 1:30pm, as the ceremony will begin at 2pm. If you arrive after the ceremony begins, the venue staff will ask you to wait in the bar area until the ceremony is over.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(1)">
-            <p>Are children invited?</p>
+            <p>What is the dress code?</p>
         </div>
         <div class="faq-answer" id="answer-1">
-            <p>No, we've got an 18+ rule across the guest list and venue.</p>
+            <p>Formal, black tie optional. We encourage anyone considering a bow tie to go for it!</p>
+            <p>We kindly ask that you avoid the colours blue and white, as these colours are reserved for the bridal party.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(2)">
-            <p>Can I bring a plus one?</p>
+            <p>How do I RSVP?</p>
         </div>
         <div class="faq-answer" id="answer-2">
-            <p>No, we have a restrictive limit at the venue, therefore, are unable to accommodate any guests not named on the invites.</p>
+            <p>Really...!? We kindly ask that you RSVP before 30<sup>th</sup> November 2024 so that we are able to plan accordingly. If you RSVP and then are subsequently unable to attend, please let us know as soon as possible.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(3)">
-            <p>What time should we arrive?</p>
+            <p>Can I bring a plus one?</p>
         </div>
         <div class="faq-answer" id="answer-3">
-            <p>We ask that you arrive no later than 1:30pm as the ceremony starts at 2pm.</p>
+            <p>Due to venue limits on capacity, we can only accomodate guests named on the envelope.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(4)">
-            <p>How do I RSVP?</p>
+            <p>Is there an arrangement for transport to and from the venue?</p>
         </div>
         <div class="faq-answer" id="answer-4">
-            <p>Really!? But on that note, please RSVP before 31<sup>st</sup> October 2024.</p>
+            <p>To enable maximum flexibility for everyone, we have not organised any group transport. There are a number of taxi companies in the area, which can be found below. We have also used Uber in the area sucessfully. Most people will be staying in Cheltenham so group taxis can be arranged if needed. There is also parking available on-site.</p>
+            <p>Please note that the venue has very limited phone signal and WiFi so we strongly encourage you to make transport arrangements beforehand. The venue has a landline phone to book last-minute taxis if plans change.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(5)">
-            <p>Is there an arrangement for transport to and from the venue?</p>
+            <p>Can I take photos during the ceremony?</p>
         </div>
         <div class="faq-answer" id="answer-5">
-            <p>No, everyone needs to organise their own transport.</p>
-            <p>There are a number of taxi companies in the area, which can be found here.</p>
+            <p>We have decided to have an unplugged ceremony - <strong>please do not take any photos during the ceremony or confetti throw.</strong> We invite you to be fully present with us and let our photographer do the work!</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(6)">
-            <p>Can I take photos during the ceremony?</p>
+            <p>What time will the reception finish?</p>
         </div>
         <div class="faq-answer" id="answer-6">
-            <p>If you value your life, make sure that Syd doesn't see you.</p>
+            <p>The bar and music will finish at midnight and the site will close at 1am.</p>
         </div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleAnswer(7)">
-            <p>What should I do if I need to cancel last minute?</p>
+            <p>Are there any pre-wedding events?</p>
         </div>
         <div class="faq-answer" id="answer-7">
-            <p>Firstly, we hope everything is okay! Secondly, just let us know as soon as possible on WhatsApp and submit a new RSVP entry selecting 'No'.</p>
+            <p>We are planning to have a very informal welcome dinner at a pub in Cheltenham on Thursday 14<sup>th</sup> August. We will let you have more details closer to the time!</p>
         </div>
     </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(8)">
-            <p>Will there be vegetarian / vegan / gluten-free menu options?</p>
-        </div>
-        <div class="faq-answer" id="answer-8">
-            <p>Not options, but let us know ASAP and we can co-ordinate with the caterers so that you get the relevant dietry adjustments on your meal.</p>
-        </div>
-    </div>
-</div>
 
     <!-- Add additional FAQs in the same structure -->
+
     <script src="faq.js"></script>
 </section>
 
@@ -446,7 +446,7 @@ $(function(){
 <div class="footer-test" id="footer">
     <footer id="footer">
         <a href="#navbar" id="back-to-top">Back to Top</a>  
-        <div class="footer-subtext">© Minchellas Ltd (but seriously this was all Joe)</div>
+        <div class="footer-subtext">© Minchellas Ltd (but seriously, this was all Joe)</div>
     </footer>
 </div>
 
