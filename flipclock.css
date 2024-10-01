@@ -20,15 +20,15 @@
   }
 
   /* Force the labels like 'Minutes' to go on the next line */
-  .flip-clock-divider .flip-clock-label {
+.flip-clock-divider .flip-clock-label {
     display: block; /* Makes the label a block-level element */
     text-align: center; /* Center the text above the flipboard */
     width: 100%; /* Ensures the label spans the entire width */
-    white-space: normal; /* Allow the text to wrap naturally */
+    white-space: nowrap; /* Prevents the text from wrapping */
     margin-bottom: 5px; /* Add a little space between the label and flipboard */
-    position: relative; /* Keep it relative for alignment purposes */
-    top: -10px; /* Adjust to position it closer to the flipboards */
-  }
+    position: absolute; /* Absolute positioning for precise control */
+    top: -20px; /* Adjust to position it closer to the flipboards */
+}
 }
 
 
