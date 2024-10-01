@@ -110,7 +110,7 @@
   font-weight: bold;
   line-height: 87px;
   border-radius: 6px;
-  background: #eed9c4 !important;
+  background: #3B3B3B !important;
 }
 
 .flip-clock-wrapper ul li {
@@ -168,7 +168,7 @@
   z-index: 5;
   width: 100%;
   height: 3px;
-  background-color: #eed9c4 !important;
+  background-color: #3B3B3B !important;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .flip-clock-wrapper ul li a div.down {
@@ -185,10 +185,10 @@
   z-index: 1;
   width: 100%;
   height: 200%;
-  color: #ffffff !important;
+  color: #f1f1f1 !important;
   text-shadow: 0 1px 2px #000;
   text-align: center;
-  background-color: #eed9c4 !important;
+  background-color: #3B3B3B !important;
   border-radius: 6px;
   font-size: 70px; }
 
@@ -222,7 +222,7 @@
 
 .flip-clock-dot {
   display: block;
-  background: #eed9c4 !important;
+  background: #3B3B3B !important;
   width: 10px;
   height: 10px;
   position: absolute;
