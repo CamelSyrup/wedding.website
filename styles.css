@@ -655,6 +655,14 @@ iframe {
     background-color: #bcbcbc; /* Slightly off-white for hover effect */
 }
 
+.centered-lines {
+    text-align: center; /* Center the text */
+}
+
+.centered-lines div {
+    display: block; /* Ensure each line is a block element */
+    margin: 5px 0; /* Add some space between lines */
+}
 
 /* Footer Styles */
 .footer-test {
