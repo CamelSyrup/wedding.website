@@ -23,29 +23,35 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        /* Align password field and submit button side by side */
+        .form-inline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Adjust the space between the input and button */
+        }
         input[type="password"] {
-            width: calc(75% - 10px);
+            width: 75%; /* Take up 75% of the container */
             padding: 10px;
-            margin-bottom: 10px;
             box-sizing: border-box;
             font-family: 'Perpetua', serif;
             border: 1px solid #dcdcdc;
             border-radius: 5px;
-            background-color: #faf0e6;
-            display: inline-block;
-            vertical-align: middle;
+            background-color: #eeeeee;
         }
         button {
             font-family: 'Perpetua', serif;
-            background-color: #f5deb3;
-            color: #6b4226;
-            padding: 10px 0px;
+            background-color: #3B3B3B;
+            color: #ffffff;
+            padding: 10px 20px; /* Adjust for button size */
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             text-align: center;
-            display: inline-block;
-            width: 70px;
+            border: none;
+        }
+        button:hover {
+            background-color: #636363;
         }
     </style>
 </head>
@@ -53,8 +59,10 @@
     <div class="background"></div>
     <div class="container">
         <h2>Password Required:</h2>
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="checkPassword()">Submit</button>
+        <div class="form-inline">
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
         <p id="error-message" style="color: red;"></p>
     </div>
 
