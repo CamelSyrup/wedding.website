@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
     } else {
-      rsvpMessage.textContent = `'${invalidName}' has not been found, please note there are no unspecified +1s`;
+      rsvpMessage.textContent = `'${invalidName}' has not been found, please check the spelling is correct. Please also note there are no unspecified plus ones.`;
       rsvpMessage.style.color = "red";
     }
   }
